@@ -52,7 +52,7 @@ Matrices - Dart Matrix Computing Library
       - [Create diagonal squarematrix from list](#create-diagonal-squarematrix-from-list)
       - [Create diagonal squarematrix from number](#create-diagonal-squarematrix-from-number)
     - Special properties of square matrix 
-      - [Determinant](#Determinant) !
+      - [Determinant](#determinant-) !
       - [Inverse](#inverse-) !
       - [Eigenvalues](#eigenvalues-) *
       - [Eigenvectors](#eigenvectors-) *
