@@ -1,86 +1,101 @@
-Matrices 矩阵运算库  
-> 灰度功能在目录中使用 ! 进行标记  
-> 未实现功能在目录中使用 * 进行标记
+Matrices - A Matrix Computation Library in Dart
+> [中文文档](README.ZH.md)  
+> Grayscale releases are marked with '!'  
+> Unimplemented functions are marked with '*'
 
 ****
-**目录**
-  - [Matrices简介](#matrices简介)
-  - [矩阵类Matrix](#矩阵类matrix)
-    - [Matrix类说明](#matrix类说明)
-    - [创建Matrix对象](#创建matrix对象)
-      - [创建矩阵](#创建矩阵)
-      - [元素全为0的矩阵](#元素全为0的矩阵)
-      - [元素全为1的矩阵](#元素全为1的矩阵)
-      - [元素全为某数字的矩阵](#元素全为某数字的矩阵)
-      - [元素全为随机数的矩阵](#元素全为随机数的矩阵)
-    - 查询
-      - [获取某个元素](#获取某个元素)
-      - [获取某一行元素](#获取某一行元素)
-      - [获取某一列元素](#获取某一列元素)
-      - [获取转置矩阵](#获取转置矩阵)
-      - [获取行阶梯形](#获取行阶梯形)
-      - [获取矩阵的秩](#获取矩阵的秩)
-    - 修改
-      - [修改某个元素](#修改某个元素)
-      - [修改某一行元素](#修改某一行元素)
-      - [修改某一列元素](#修改某一列元素)
-    - 增加
-      - [增加一行元素](#增加一行元素)
-      - [增加一列元素](#增加一列元素)
-      - [按行追加一个矩阵的每一行](#按行追加一个矩阵的每一行)
-      - [按列追加一个矩阵的每一列](#按列追加一个矩阵的每一列)
-    - 删除
-      - [删除某一行元素](#删除某一行元素)
-      - [删除某一列元素](#删除某一列元素)
-      - [删除某几行元素](#删除某几行元素)
-      - [删除某几列元素](#删除某几列元素)
-    - 四则运算
-      - [加法](#加法-) !
-      - [减法](#减法-) !
-      - [数乘&乘法](#数乘乘法)
-    - [注意!]()
-    - [后续规划]()
-  - [方阵类SquareMatrix](#方阵类squarematrix)
-    - [SquareMatrix类说明](#squarematrix类说明)
-    - [创建SquareMatrix对象](#创建squarematrix对象)
-      - [创建方阵](#创建方阵)
-      - [元素全为0的方阵](#元素全为0的方阵)
-      - [元素全为1的方阵](#元素全为1的方阵)
-      - [元素全为某数字的方阵](#元素全为某数字的方阵)
-      - [元素全为随机数的方阵](#元素全为随机数的方阵)
-      - [主对角线元素的值为某数组的对角阵](#主对角线元素的值为某数组的对角阵)
-      - [主对角线元素的值为某数字的对角阵](#主对角线元素的值为某数字的对角阵)
-    - 查询
-      - [获取行列式的值](#获取行列式的值-) !
-      - [获取逆矩阵](#获取逆矩阵-) !
-      - [获取特征值](#获取特征值-) *
-      - [获取特征向量](#获取特征向量-) *
-    - [注意!]()
-    - [后续规划]()
-  - [表情包方法](#表情包方法)
-    - [快速生成向量]() ! * 
+**CONTENT**
+  - [Matrices introduction](#matrices-introduction)
+  - [Matrix class](#matrix-class)
+    - [Illustrations of Matrix class](#illustrations-of-matrix-class)
+    - [Create a Matrix instance](#create-a-matrix-instance)
+      - [Create a matrix](#create-a-matrix)
+      - [Matrix of zeros](#matrix-of-zeros)
+      - [Matrix of ones](#matrix-of-ones)
+      - [Matrix of a certain number](#matrix-of-a-certain-number)
+      - [Matrix of random numbers](#matrix-of-random-numbers)
+    - Select
+      - [Access item](#access-item)
+      - [Access row](#access-row)
+      - [Access column](#access-column)
+      - [Transpose](#transpose)
+      - [Row-echelon form](#row-echelon-form)
+      - [Rank](#Rank)
+    - Update
+      - [Update item](#update-item)
+      - [Update row](#update-row)
+      - [Update column](#update-column)
+    - Insert
+      - [Insert row](#insert-row)
+      - [Insert column](#insert-column)
+      - [Append rows](#append-rows)
+      - [Append columns](#append-columns)
+    - Delete
+      - [Delete row](#delete-row)
+      - [Delete column](#delete-column)
+      - [Delete rows](#delete-rows)
+      - [Delete columns](#delete-columns)
+    - Arithmetic operations
+      - [Addition](#addition) !
+      - [Subtraction](#subtraction) !
+      - [Multiplication](#multiplication)
+    - [Caution!]()
+    - [Follow-up plan]()
+  - [SquareMatrix class](#squarematrix-class)
+    - [Illustrations of SquareMatrix class](#illustrations-of-squareMatrix-class)
+    - [Create a SquareMatrix instance](#create-a-squarematrix-instance)
+      - [Create a squarematrix](#create-a-squarematrix)
+      - [Squarematrix of zeros](#squarematrix-of-zeros)
+      - [Squarematrix of ones](#squarematrix-of-ones)
+      - [Squarematrix of a certain number](#squarematrix-of-a-certain-number)
+      - [Squarematrix of random numbers](#squarematrix-of-random-numbers)
+      - [Create diagonal squarematrix from list](#create-diagonal-squarematrix-from-list)
+      - [Create diagonal squarematrix from number](#create-diagonal-squarematrix-from-number)
+    - Special properties of square matrix 
+      - [Determinant](#Determinant) !
+      - [Inverse](#inverse-) !
+      - [Eigenvalues](#eigenvalues-) *
+      - [Eigenvectors](#eigenvectors-) *
+    - [Caution!]()
+    - [Follow-up plan]()
+  - [Emoji method](#emoji-method)
+    - [Create vectors]() ! * 
+      - o_n
+      - l_n
+      - m_n
+      - l_m_n
+      - TAT
+      - QAQ
+      - X_X
 
 ****
-## Matrices简介
+
+## Matrices introduction
 
 &nbsp;&nbsp;&nbsp;&nbsp;
-Matrices是一个Dart语言的矩阵库。开发它的目的是为Astable等项目提供矩阵运算支持。Matrices目前还处于非常早期的阶段，特性和API随时都会发生变动。目前所有运算均使用Dart语言实现。
+
+Matrices is a matrix library written purely in Dart. It is developed to provide support for projects like Astable which requires mathematical computation. It is now in the very early age, and its API may change frequently.
+It is now written purely in Dart programming language and C-FFI might be introduced to lift its performance in the near future.
 
 ****
 
-## 矩阵类Matrix
+## Matrix class
 
 &nbsp;&nbsp;&nbsp;&nbsp;
-Matrix类里提供了所有类型的矩阵共有的方法，如创建一般矩阵、查询矩阵的元素或某行某列并对其进行修改，拼接向量或矩阵到原矩阵。但是，Matrix类未提供方阵特有的方法，比如求矩阵行列式的值、求逆矩阵、求特征值等。使用这些方法需要先导入Matrix.dart文件。
 
-### Matrix类说明
+The matrix class provides all the methods shared by any types of matrix like vector, square matrix or non-square matrix. For example, methods are provided to create a matrix, to query or update element at certain position, to append a row or column to the existing matrix, etc. However, it does not provides methods special for a square matrix.
+Importing 'Matrix.dart' is required before using methods listed below.
+
+### Illustrations of Matrix class
 
 &nbsp;&nbsp;&nbsp;&nbsp;
-Matrix类只有一个成员变量，即List<List< double >>类型的matrix变量。该变量是公有的，所以可以通过数组操作直接改变矩阵元素的值。禁止使用Matrix()构造方法创建矩阵，只允许使用文档里提供的命名构造方法。
 
-### 创建Matrix对象
+The matrix class only has one public field - 'matrix' whose runtimetype is List<List<double>>. Thus, the operation of updating the matrix is the same as the operation on a 'list' instance.
+However, you are NOT ALLOWED to initialize a matrix instance through Matrix() conctructor. Instead, a few named constructors are provided for initialization of a matrix instance.
 
-#### 创建矩阵
+### Create a Matrix instance
+
+#### Create a matrix
 ```dart
   /// Matrix.fromList(List<List<double>> lists)
 
@@ -96,7 +111,7 @@ Matrix类只有一个成员变量，即List<List< double >>类型的matrix变量
   // [9.0, 9.0, 8.0, 6.0]
   // [1.0, 1.0, 2.0, 9.0]
 ```
-#### 元素全为0的矩阵
+#### Matrix of zeros
 ```dart
   /// Matrix.zero(int row, int column)
 
@@ -107,7 +122,7 @@ Matrix类只有一个成员变量，即List<List< double >>类型的matrix变量
   // [0.0, 0.0, 0.0]
   // [0.0, 0.0, 0.0]
 ```
-#### 元素全为1的矩阵
+#### Matrix of ones
 ```dart
   /// Matrix.one(int row, int column)
 
@@ -118,7 +133,7 @@ Matrix类只有一个成员变量，即List<List< double >>类型的matrix变量
   // [1.0, 1.0, 1.0]
   // [1.0, 1.0, 1.0]
 ```
-#### 元素全为某数字的矩阵
+#### Matrix of a certain number
 ```dart
   /// Matrix.number(double number, int row, int column)
 
@@ -129,7 +144,7 @@ Matrix类只有一个成员变量，即List<List< double >>类型的matrix变量
   // [9.0, 9.0, 9.0]
   // [9.0, 9.0, 9.0]
 ```
-#### 元素全为随机数的矩阵
+#### Matrix of random numbers
 ```dart
   /// Matrix.random(int row, int column)
 
@@ -142,28 +157,30 @@ Matrix类只有一个成员变量，即List<List< double >>类型的matrix变量
 ```
 
 
-### 查询
+### Select
 &nbsp;&nbsp;&nbsp;&nbsp;
-以mat矩阵作为例子进行演示
+
+Taking the matrix 'mat' as example.
+
 ```dart
 Matrix mat 3x4
     [2, 3, 3, 3]
     [9, 9, 8, 6]
     [1, 1, 2, 9]
 ```
-#### 获取某个元素
+#### Access item
 ```dart
   print( mat.matrix[1][2] );
 
   // 8.0
 ```
-#### 获取某一行元素
+#### Access row
 ```dart
   print( mat.matrix[0] );    
 
   // [2.0, 3.0, 3.0, 3.0]
 ```
-#### 获取某一列元素
+#### Access column
 ```dart
   /// List<double> column(int column)
 
@@ -171,7 +188,7 @@ Matrix mat 3x4
 
   // [2.0, 9.0, 1.0]  
 ```
-#### 获取转置矩阵
+#### Transpose
 ```dart
   /// Matrix transpose()
 
@@ -183,7 +200,7 @@ Matrix mat 3x4
   // [3.0, 8.0, 2.0]
   // [3.0, 6.0, 9.0]
 ```
-#### 获取行阶梯形
+#### Row-echelon form
 ```dart
   /// Matrix rowEchelonForm()
 
@@ -195,7 +212,7 @@ Matrix mat 3x4
   // [0.0, 0.0, 1.0, 7.5]
 
 ```
-#### 获取矩阵的秩
+#### Rank
 ```dart
   /// int rank()
 
@@ -203,30 +220,32 @@ Matrix mat 3x4
 
   // 3
 ```
-### 修改
+### Update
 &nbsp;&nbsp;&nbsp;&nbsp;
-同样以mat矩阵作为例子进行演示
+
+Taking the matrix 'mat' as example.
+
 ```dart
 Matrix mat 3x4
     [2, 3, 3, 3]
     [9, 9, 8, 6]
     [1, 1, 2, 9]
 ```
-#### 修改某个元素
+#### Update item
 ```dart
   mat.matrix[0][0] = 3;
   print( mat.matrix[0] );
 
   // [3.0, 3.0, 3.0, 3.0]
 ```
-#### 修改某一行元素
+#### Update row
 ```dart
   mat.matrix[0] = [1, 4, 5, 0];
   print( mat.matrix[0] );
 
   // [1.0, 4.0, 5.0, 0.0]
 ```
-#### 修改某一列元素
+#### Update column
 ```dart
   /// setColumn(List<double> list, int column)
 
@@ -238,16 +257,18 @@ Matrix mat 3x4
   // [4.0, 9.0, 8.0, 6.0]
   // [5.0, 1.0, 2.0, 9.0]
 ```
-### 增加
+### Insert
 &nbsp;&nbsp;&nbsp;&nbsp;
-同样以mat矩阵作为例子进行演示
+
+Taking the matrix 'mat' as example.
+
 ```dart
 Matrix mat 3x4
     [2, 3, 3, 3]
     [9, 9, 8, 6]
     [1, 1, 2, 9]
 ```
-#### 增加一行元素
+#### Insert row
 ```dart
   /// addRow(List<double> list, int index)
 
@@ -260,7 +281,7 @@ Matrix mat 3x4
   // [9.0, 9.0, 8.0, 6.0]
   // [1.0, 1.0, 2.0, 9.0]
 ```
-#### 增加一列元素
+#### Insert column
 ```dart
   /// addColumn(List<double> list, int index)
 
@@ -272,7 +293,7 @@ Matrix mat 3x4
   // [9.0, 9.0, 8.0, 6.0, 8.0]
   // [1.0, 1.0, 2.0, 9.0, 8.0]
 ```
-#### 按行追加一个矩阵的每一行
+#### Append rows
 ```dart
   /// appendRows(Matrix injected)
 
@@ -290,7 +311,7 @@ Matrix mat 3x4
   // [8.0, 8.0, 8.0, 8.0]
   // [8.0, 8.0, 8.0, 8.0]  
 ```
-#### 按列追加一个矩阵的每一列
+#### Append columns
 ```dart
   /// appendColumns(Matrix injected)
 
@@ -307,16 +328,18 @@ Matrix mat 3x4
   // [9.0, 9.0, 8.0, 6.0, 8.0, 8.0]
   // [1.0, 1.0, 2.0, 9.0, 8.0, 8.0]
 ```
-### 删除
+### Delete
 &nbsp;&nbsp;&nbsp;&nbsp;
-同样以mat矩阵作为例子进行演示
+
+Taking the matrix 'mat' as example.
+
 ```dart
 Matrix mat 3x4
     [2, 3, 3, 3]
     [9, 9, 8, 6]
     [1, 1, 2, 9]
 ```
-#### 删除某一行元素
+#### Delete row
 ```dart
   /// deleteRow(int index)
 
@@ -327,7 +350,7 @@ Matrix mat 3x4
   // [9.0, 9.0, 8.0, 6.0]
   // [1.0, 1.0, 2.0, 9.0]
 ```
-#### 删除某一列元素
+#### Delete column
 ```dart
   /// deleteColumn(int index)
 
@@ -339,8 +362,10 @@ Matrix mat 3x4
   // [9.0, 8.0, 6.0]
   // [1.0, 2.0, 9.0]
 ```
-#### 删除某几行元素
-> PS: 删除多行时，应按照下标从小到大的顺序
+#### Delete rows
+
+> PS: While deleting rows, the indexs MUST be put in order FROM SMALLEST TO LARGEST.
+
 ```dart
   /// deleteRows(List<int> list)
 
@@ -350,8 +375,10 @@ Matrix mat 3x4
   // Matrix: 1x4
   // [1.0, 1.0, 2.0, 9.0]
 ```
-#### 删除某几列元素
-> PS: 删除多列时，应按照下标从小到大的顺序
+#### Delete columns
+
+> PS: While deleting columns, the indexs MUST be put in order FROM SMALLEST TO LARGEST.
+
 ```dart
   /// deleteColumns(List<int> list)
 
@@ -363,8 +390,8 @@ Matrix mat 3x4
   // [9.0, 6.0]
   // [1.0, 9.0]
 ```
-### 四则运算
-#### 加法 !
+### Arithmetic operations
+#### Addition
 ```dart
   var mat = Matrix.fromList([
     [2, 3, 3],
@@ -373,7 +400,7 @@ Matrix mat 3x4
   print( mat + 3 );
   print( mat + mat );
 ```
-#### 减法 !
+#### Subtraction
 ```dart
   var mat = Matrix.fromList([
     [2, 3, 3],
@@ -381,9 +408,9 @@ Matrix mat 3x4
   ]);
   print( mat - 3 );
 ```
-#### 数乘&乘法
+#### Multiplication
 ```dart
-  // 数乘(数字应在乘号右侧)
+  // Scalar matrix multiplication (the scalar number MUST be in the right position)
   var mat = Matrix.fromList([
     [2, 3, 3],
     [1, 2, 9]
@@ -394,8 +421,7 @@ Matrix mat 3x4
   // [6.0, 9.0, 9.0]
   // [3.0, 6.0, 27.0]
 
-
-  // 矩阵乘法
+  // Matrix multiplication
   var multi = Matrix.fromList([
     [2, 3.5],
     [1, -2],
@@ -407,25 +433,27 @@ Matrix mat 3x4
   // [-5.0, 2.5]
   // [-32.0, 4.0]
 ```
-### 注意！
+### Caution!
 
-### 后续规划
+### Follow-up plan
 
 ****
 
-## 方阵类SquareMatrix
-
-&nbsp;&nbsp;&nbsp;&nbsp;
-SquareMatrix类包含了一些方阵特有的方法，如快速创建一个方阵、求方阵的行列式的值、逆矩阵、特征值、特征向量等。使用这些方法需要先导入SquareMatrix.dart文件。
-
-### SquareMatrix类说明
+## SquareMatrix class
 
 &nbsp;&nbsp;&nbsp;&nbsp;
 
+The squarematrix class has methods special for square matrix, like creating a squarematrix instance, calculating the determinant, the inverse, the eigen values and the eigen vectors, etc.
+Importing 'SquareMatrix.dart' is required before using methods listed below.
 
-### 创建SquareMatrix对象
+### Illustrations of SquareMatrix class
 
-#### 创建方阵
+&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+### Createa a SquareMatrix instance
+
+#### Create a squarematrix
 ```dart
   /// SquareMatrix.fromList(List<List<double>> lists)
 
@@ -441,7 +469,7 @@ SquareMatrix类包含了一些方阵特有的方法，如快速创建一个方�
   // [3.0, 6.0, 27.0]
   // [27.0, 24.0, 18.0]
 ```
-#### 元素全为0的方阵
+#### Squarematrix of zeros
 ```dart
   /// SquareMatrix.zero(int row)
 
@@ -453,7 +481,7 @@ SquareMatrix类包含了一些方阵特有的方法，如快速创建一个方�
   // [0.0, 0.0, 0.0]
   // [0.0, 0.0, 0.0]
 ```
-#### 元素全为1的方阵
+#### Squarematrix of ones
 ```dart
   /// SquareMatrix.one(int row)
 
@@ -465,7 +493,7 @@ SquareMatrix类包含了一些方阵特有的方法，如快速创建一个方�
   // [1.0, 1.0, 1.0]
   // [1.0, 1.0, 1.0]
 ```
-#### 元素全为某数字的方阵
+#### Squarematrix of a certain number
 ```dart
   /// SquareMatrix.number(double number, int row)
 
@@ -477,7 +505,7 @@ SquareMatrix类包含了一些方阵特有的方法，如快速创建一个方�
   // [2.0, 2.0, 2.0]
   // [2.0, 2.0, 2.0]
 ```
-#### 元素全为随机数的方阵
+#### Squarematrix of random numbers
 ```dart
   /// SquareMatrix.random(int row)
 
@@ -489,7 +517,7 @@ SquareMatrix类包含了一些方阵特有的方法，如快速创建一个方�
   // [0.3590813328566256, 0.8098420655296595, 0.015949886001227154]
   // [0.6670401483574298, 0.3054732396044414, 0.3113168618967712]
 ```
-#### 主对角线元素的值为某数组的对角阵
+#### Create diagonal squarematrix from list
 ```dart
   /// SquareMatrix.diagonal(List<double> list)
 
@@ -501,7 +529,7 @@ SquareMatrix类包含了一些方阵特有的方法，如快速创建一个方�
   // [0.0, 2.0, 0.0]
   // [0.0, 0.0, 3.0]
 ```
-#### 主对角线元素的值为某数字的对角阵
+#### Create diagonal squarematrix from number
 ```dart
   /// SquareMatrix.diagonalFromNumber(double num, int row)
 
@@ -513,8 +541,8 @@ SquareMatrix类包含了一些方阵特有的方法，如快速创建一个方�
   // [0.0, 2.0, 0.0]
   // [0.0, 0.0, 2.0]
 ```
-### 查询
-#### 获取行列式的值 !
+### Special properties of square matrix
+#### Determinant !
 ```dart
   /// double determinant()
 
@@ -526,7 +554,7 @@ SquareMatrix类包含了一些方阵特有的方法，如快速创建一个方�
 
   // -1.0
 ```
-#### 获取逆矩阵 !
+#### Inverse !
 ```dart
   /// SquareMatrix inverse()
 
@@ -540,24 +568,27 @@ SquareMatrix类包含了一些方阵特有的方法，如快速创建一个方�
   // [1.0, -1.0]
   // [1.0, -1.0]
 ```
-#### 获取特征值 *
+#### Eigenvalues *
 ```dart
   /// double eigenvalue()
 ```
-#### 获取特征向量 *
+#### Eigenvectors *
 ```dart
   /// Matrix eigenvector()
 ```
-### 注意！
+### Caution!
 
-### 后续规划
+### Follow-up plan
 
 ****
 
-## 表情包方法
+## Emoji method
 &nbsp;&nbsp;&nbsp;&nbsp;
-提供一些常用的函数，比如快速生成向量、批量改变矩阵元素的值等等。使用这些方法需要先导入Emoji.dart文件。
-### 快速生成向量 ! * 
+
+Providing frequently-used functions, like creating vectors, batch updating elements, etc.
+Importing 'Emoji.dart' is required before using methods listed below.
+
+### Create vectors ! * 
 #### o_n
 ```dart
   /// List<double> o_n(int n)
