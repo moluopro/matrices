@@ -36,8 +36,8 @@ Matrices - Dart Matrix Computing Library
       - [Delete rows](#delete-rows)
       - [Delete columns](#delete-columns)
     - Arithmetic operations
-      - [Addition](#addition) !
-      - [Subtraction](#subtraction) !
+      - [Addition](#addition)
+      - [Subtraction](#subtraction)
       - [Multiplication](#multiplication)
     - [Caution!]()
     - [Follow-up plan]()
