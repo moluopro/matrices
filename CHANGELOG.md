@@ -1,3 +1,7 @@
+## 1.0.5
+
+- add English Doc
+
 ## 1.0.4
 
 - doc update

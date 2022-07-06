@@ -1,4 +1,4 @@
-Matrices - A Matrix Computation Library in Dart
+Matrices - Dart Matrix Computing Library
 > [中文文档](README.ZH.md)  
 > Grayscale releases are marked with '!'  
 > Unimplemented functions are marked with '*'
