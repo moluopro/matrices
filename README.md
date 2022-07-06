@@ -42,9 +42,9 @@ Matrices - Dart Matrix Computing Library
     - [Caution!]()
     - [Follow-up plan]()
   - [SquareMatrix class](#squarematrix-class)
-    - [Illustrations of SquareMatrix class](#illustrations-of-squareMatrix-class)
-    - [Create a SquareMatrix instance](#create-a-squarematrix-instance)
-      - [Create a squarematrix](#create-a-squarematrix)
+    - [Illustrations of SquareMatrix class](#illustrations-of-squarematrix-class)
+    - [Create a SquareMatrix instance](#createa-a-squarematrix-instance)
+      - [Create a squarematrix](#create-a-square-matrix)
       - [Squarematrix of zeros](#squarematrix-of-zeros)
       - [Squarematrix of ones](#squarematrix-of-ones)
       - [Squarematrix of a certain number](#squarematrix-of-a-certain-number)
@@ -60,13 +60,6 @@ Matrices - Dart Matrix Computing Library
     - [Follow-up plan]()
   - [Emoji method](#emoji-method)
     - [Create vectors]() ! * 
-      - o_n
-      - l_n
-      - m_n
-      - l_m_n
-      - TAT
-      - QAQ
-      - X_X
 
 ****
 
@@ -75,7 +68,6 @@ Matrices - Dart Matrix Computing Library
 &nbsp;&nbsp;&nbsp;&nbsp;
 
 Matrices is a matrix library written purely in Dart. It is developed to provide support for projects like Astable which requires mathematical computation. It is now in the very early age, and its API may change frequently.
-It is now written purely in Dart programming language and C-FFI might be introduced to lift its performance in the near future.
 
 ****
 
@@ -90,8 +82,8 @@ Importing 'Matrix.dart' is required before using methods listed below.
 
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-The matrix class only has one public field - 'matrix' whose runtimetype is List<List<double>>. Thus, the operation of updating the matrix is the same as the operation on a 'list' instance.
-However, you are NOT ALLOWED to initialize a matrix instance through Matrix() conctructor. Instead, a few named constructors are provided for initialization of a matrix instance.
+The Matrix class only has one public field - 'Matrix' whose runtimetype is List<List<double>>. Thus, the operation of updating the matrix is the same as the operation on a 'list' instance.
+However, you are NOT ALLOWED to initialize a Matrix instance through Matrix() conctructor. Instead, a few named constructors are provided for initialization of a Matrix instance.
 
 ### Create a Matrix instance
 
@@ -443,7 +435,7 @@ Matrix mat 3x4
 
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-The squarematrix class has methods special for square matrix, like creating a squarematrix instance, calculating the determinant, the inverse, the eigen values and the eigen vectors, etc.
+The SquareMatrix class has methods special for square matrix, like creating a squarematrix instance, calculating the determinant, the inverse, the eigen values and the eigen vectors, etc.
 Importing 'SquareMatrix.dart' is required before using methods listed below.
 
 ### Illustrations of SquareMatrix class
@@ -453,7 +445,7 @@ Importing 'SquareMatrix.dart' is required before using methods listed below.
 
 ### Createa a SquareMatrix instance
 
-#### Create a squarematrix
+#### Create a square matrix
 ```dart
   /// SquareMatrix.fromList(List<List<double>> lists)
 
@@ -469,7 +461,7 @@ Importing 'SquareMatrix.dart' is required before using methods listed below.
   // [3.0, 6.0, 27.0]
   // [27.0, 24.0, 18.0]
 ```
-#### Squarematrix of zeros
+#### SquareMatrix of zeros
 ```dart
   /// SquareMatrix.zero(int row)
 
@@ -481,7 +473,7 @@ Importing 'SquareMatrix.dart' is required before using methods listed below.
   // [0.0, 0.0, 0.0]
   // [0.0, 0.0, 0.0]
 ```
-#### Squarematrix of ones
+#### SquareMatrix of ones
 ```dart
   /// SquareMatrix.one(int row)
 
@@ -493,7 +485,7 @@ Importing 'SquareMatrix.dart' is required before using methods listed below.
   // [1.0, 1.0, 1.0]
   // [1.0, 1.0, 1.0]
 ```
-#### Squarematrix of a certain number
+#### SquareMatrix of a certain number
 ```dart
   /// SquareMatrix.number(double number, int row)
 
@@ -505,7 +497,7 @@ Importing 'SquareMatrix.dart' is required before using methods listed below.
   // [2.0, 2.0, 2.0]
   // [2.0, 2.0, 2.0]
 ```
-#### Squarematrix of random numbers
+#### SquareMatrix of random numbers
 ```dart
   /// SquareMatrix.random(int row)
 
@@ -517,7 +509,7 @@ Importing 'SquareMatrix.dart' is required before using methods listed below.
   // [0.3590813328566256, 0.8098420655296595, 0.015949886001227154]
   // [0.6670401483574298, 0.3054732396044414, 0.3113168618967712]
 ```
-#### Create diagonal squarematrix from list
+#### Create diagonal square matrix from list
 ```dart
   /// SquareMatrix.diagonal(List<double> list)
 
@@ -529,7 +521,7 @@ Importing 'SquareMatrix.dart' is required before using methods listed below.
   // [0.0, 2.0, 0.0]
   // [0.0, 0.0, 3.0]
 ```
-#### Create diagonal squarematrix from number
+#### Create diagonal square matrix from number
 ```dart
   /// SquareMatrix.diagonalFromNumber(double num, int row)
 
