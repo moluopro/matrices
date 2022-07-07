@@ -1,5 +1,5 @@
 library matrices;
 
-export 'src/Matrix.dart';
-export 'src/SquareMatrix.dart';
-export 'src/Emoji.dart';
+export 'src/matrix.dart';
+export 'src/square_matrix.dart';
+export 'src/emoji.dart';

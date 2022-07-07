@@ -1,5 +1,6 @@
-import 'DevUtils.dart';
-import 'SquareMatrix.dart';
+import 'dev_utils.dart';
+
+import 'square_matrix.dart';
 
 // 矩阵类
 class Matrix {
@@ -286,7 +287,7 @@ class Matrix {
     if (multi is Matrix) {
       for (var i = 0; i < this.matrix.length; i++) {
         for (var j = 0; j < multi.matrix[0].length; j++) {
-          temp.add(cross_product(this.matrix[i], multi.column(j)));
+          temp.add(crossProduct(this.matrix[i], multi.column(j)));
         }
         result.matrix.add(temp);
         temp = [];
@@ -303,10 +304,10 @@ class Matrix {
     List<double> temp = [];
     for (int i = 0; i < length; i++) {
       for (int j = 0; j < length; j++) {
-        temp.add( matrix[i][j]);
+        temp.add(matrix[i][j]);
       }
       lists.add(temp);
-      temp=[];
+      temp = [];
     }
     return SquareMatrix.fromList(lists);
   }

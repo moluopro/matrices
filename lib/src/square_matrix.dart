@@ -1,5 +1,5 @@
-import 'Matrix.dart';
-import 'DevUtils.dart';
+import 'matrix.dart';
+import 'dev_utils.dart';
 
 // 方阵类，继承自矩阵类
 class SquareMatrix extends Matrix {
@@ -56,12 +56,12 @@ class SquareMatrix extends Matrix {
 
   // 获取方阵的行列式的值
   double determinant() {
-    return utils_determinant(this.matrix);
+    return utilsDeterminant(this.matrix);
   }
 
   // 获取方阵的逆矩阵
   SquareMatrix inverse() {
-    return SquareMatrix.fromList(utils_inverse(this.matrix));
+    return SquareMatrix.fromList(utilsInverse(this.matrix));
   }
 
   // 获取方阵的特征值

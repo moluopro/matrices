@@ -1,5 +1,5 @@
 import 'dart:math';
-import 'Matrix.dart';
+import 'matrix.dart';
 
 // 生成需要的List<List<double>>
 List<List<double>> generateLists(double seed, int row, int column) {
@@ -63,7 +63,7 @@ List<List<double>> listsTranspose(List<List<double>> lists) {
 }
 
 // 求两个List向量的向量积
-double cross_product(List<double> first, List<double> second) {
+double crossProduct(List<double> first, List<double> second) {
   double result = 0;
   for (var i = 0; i < first.length; i++) {
     result += (first[i] * second[i]);
@@ -86,7 +86,7 @@ List<List<double>> copyMatrix(Matrix copied) {
 }
 
 // // 获取矩阵的逆 dep_version
-// List<List<double>> utils_inverse(List<List<double>> A) {
+// List<List<double>> utilsInverse(List<List<double>> A) {
 //         List<List<double>> B = Matrix.zero(A.length, A[0].length).matrix;
 //         for (int i = 0; i < A.length; i++) {
 //             for (int j = 0; j < A[0].length; j++) {
@@ -109,7 +109,7 @@ List<List<double>> copyMatrix(Matrix copied) {
 //     }
 
 // 获取矩阵的逆
-List<List<double>> utils_inverse(List<List<double>> matrix) {
+List<List<double>> utilsInverse(List<List<double>> matrix) {
   List<List<double>> L = Matrix.zero(matrix.length, matrix[0].length).matrix;
   List<List<double>> r = Matrix.zero(matrix.length, matrix[0].length).matrix;
   for (int i = 0; i < L.length; i++) {
@@ -201,13 +201,13 @@ List<List<double>> utils_inverse(List<List<double>> matrix) {
 }
 
 // 求解矩阵的行列式
-double utils_determinant(List<List<double>> a) {
+double utilsDeterminant(List<List<double>> a) {
   if (a.length == 1) {
     return a[0][0];
   }
   double det = 0;
   for (int i = 0; i < a[0].length; i++) {
-    det += pow(-1, i) * a[0][i] * utils_determinant(minor(a, 0, i));
+    det += pow(-1, i) * a[0][i] * utilsDeterminant(minor(a, 0, i));
   }
   return det;
 }
