@@ -1,3 +1,7 @@
+## 1.0.7
+
+- doc update
+
 ## 1.0.6
 
 - doc update
