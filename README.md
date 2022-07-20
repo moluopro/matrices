@@ -1,5 +1,5 @@
 Matrices - Dart Matrix Computing Library
-> [中文文档]([README.ZH.md](https://gitee.com/abandoft/matrices/blob/master/README.ZH.md))  
+> [中文文档](https://gitee.com/abandoft/matrices/blob/master/README.ZH.md)  
 > Grayscale releases are marked with '!'  
 > Unimplemented functions are marked with '*'
 > Usage: https://pub.dev/packages/matrices

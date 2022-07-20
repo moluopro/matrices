@@ -1,5 +1,5 @@
 Matrices 矩阵运算库  
-> [英文文档]([README.md](https://gitee.com/abandoft/matrices/blob/master/README.md))  
+> [英文文档](https://gitee.com/abandoft/matrices/blob/master/README.md)  
 > 灰度功能在目录中使用 ! 进行标记  
 > 未实现功能在目录中使用 * 进行标记
 > 使用：https://pub.dev/packages/matrices
