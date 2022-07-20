@@ -2,10 +2,11 @@ import 'dart:math';
 import 'matrix.dart';
 
 /// 生成需要的List<List<double>>
+///
 /// Create a matrix instance
 List<List<double>> generateLists(double seed, int row, int column) {
   List<List<double>> matrix = [];
-  // List<double> list = [];
+  List<double> list = [];
   // for (var i = 0; i < column; i++) {
   //   list.add(seed);
   // }
@@ -18,6 +19,7 @@ List<List<double>> generateLists(double seed, int row, int column) {
 }
 
 /// 生成随机数List<List<double>>
+///
 /// Create a matrix instance with random elements
 List<List<double>> generateRandomLists(int row, int column) {
   List<List<double>> matrix = [];
@@ -40,6 +42,7 @@ List<List<double>> generateRandomLists(int row, int column) {
 }
 
 /// 通过数组生成对角阵
+///
 /// Create a diagonal matrix from an array
 ///
 /// Similar to `diag` function in MATLAB
@@ -116,11 +119,6 @@ List<List<double>> copyMatrix(Matrix copied) {
       (indexRow) => List.generate(copied.matrix[0].length,
           (indexColumn) => copied.matrix[indexRow][indexColumn]));
   return block;
-}
-
-void main(List<String> args) {
-  var test = generateRandomLists(4, 4);
-  print(utilsInverse(test));
 }
 
 /// 获取矩阵的逆

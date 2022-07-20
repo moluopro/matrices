@@ -1,6 +1,6 @@
 name: matrices
 description: A Dart matrix computing library, providing basic operations of linear algebra
-version: 1.0.7
+version: 1.0.8
 homepage: http://moluopro.com/
 
 environment:
