@@ -6,7 +6,7 @@ import 'matrix.dart';
 /// Create a matrix instance
 List<List<double>> generateLists(double seed, int row, int column) {
   List<List<double>> matrix = [];
-  List<double> list = [];
+  // List<double> list = [];
   // for (var i = 0; i < column; i++) {
   //   list.add(seed);
   // }
@@ -164,11 +164,11 @@ List<List<double>> utilsInverse(List<List<double>> matrix) {
   // 计算 L_inv
   for (int j = 0; j < matrix.length; j++) {
     for (int i = j; i < matrix.length; i++) {
-      if (i == j)
+      if (i == j) {
         r[i][j] = 1 / L[i][j];
-      else if (i < j)
+      } else if (i < j) {
         r[i][j] = 0;
-      else {
+      } else {
         double s = 0.0;
         for (int k = j; k < i; k++) {
           s += L[i][k] * r[k][j];
@@ -181,11 +181,11 @@ List<List<double>> utilsInverse(List<List<double>> matrix) {
   // 计算 U_inv
   for (int j = 0; j < matrix.length; j++) {
     for (int i = j; i >= 0; i--) {
-      if (i == j)
+      if (i == j) {
         u[i][j] = 1 / U[i][j];
-      else if (i > j)
+      } else if (i > j) {
         u[i][j] = 0;
-      else {
+      } else {
         double s = 0.0;
         for (int k = i + 1; k <= j; k++) {
           s += U[i][k] * u[k][j];
