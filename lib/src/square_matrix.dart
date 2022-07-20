@@ -1,9 +1,9 @@
 import 'matrix.dart';
 import 'dev_utils.dart';
 
-// 方阵类，继承自矩阵类
+/// 方阵类，继承自矩阵类
 class SquareMatrix extends Matrix {
-  // 构造方法，通过List<List<double>>生成SquareMatrix
+  /// 构造方法，通过List<List<double>>生成SquareMatrix
   SquareMatrix() {} // 默认不使用，仅作为脚手架
   SquareMatrix.fromList(List<List<double>> lists) {
     bool isSquareMatrix = true;
@@ -20,7 +20,7 @@ class SquareMatrix extends Matrix {
     }
   }
 
-  // 命名构造方法，生成全0全1和全为某数字的方阵
+  /// 命名构造方法，生成全0全1和全为某数字的方阵
   SquareMatrix.zero(int row) {
     matrix = generateLists(0, row, row);
   }
@@ -31,16 +31,17 @@ class SquareMatrix extends Matrix {
     matrix = generateLists(number, row, row);
   }
 
-  // 命名构造方法，生成全为随机数的方阵
+  /// 命名构造方法，生成全为随机数的方阵
   SquareMatrix.random(int row) {
     matrix = generateRandomLists(row, row);
   }
 
-  // 命名构造方法，生成主对角线元素的值为某数组的对角阵
+  /// 命名构造方法，生成主对角线元素的值为某数组的对角阵
   SquareMatrix.diagonal(List<double> list) {
     matrix = generateDiagonalLists(list);
   }
-  // 命名构造方法，生成主对角线元素的值为某数字的对角阵
+
+  /// 命名构造方法，生成主对角线元素的值为某数字的对角阵
   SquareMatrix.diagonalFromNumber(double num, int row) {
     List<double> list = [];
     for (var i = 0; i < row; i++) {
@@ -54,22 +55,22 @@ class SquareMatrix extends Matrix {
     return ('Square' + super.toString());
   }
 
-  // 获取方阵的行列式的值
+  /// 获取方阵的行列式的值
   double determinant() {
     return utilsDeterminant(this.matrix);
   }
 
-  // 获取方阵的逆矩阵
+  /// 获取方阵的逆矩阵
   SquareMatrix inverse() {
     return SquareMatrix.fromList(utilsInverse(this.matrix));
   }
 
-  // 获取方阵的特征值
+  /// 获取方阵的特征值
   double eigenvalue() {
     return 0.0;
   }
 
-  // 获取方阵的特征向量
+  /// 获取方阵的特征向量
   List<double> eigenvector() {
     return matrix[0];
   }

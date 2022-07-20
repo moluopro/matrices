@@ -1,136 +1,144 @@
 import 'dart:math';
 import 'matrix.dart';
 
-// 生成需要的List<List<double>>
+/// 生成需要的List<List<double>>
+/// Create a matrix instance
 List<List<double>> generateLists(double seed, int row, int column) {
   List<List<double>> matrix = [];
-  List<double> list = [];
-  for (var i = 0; i < column; i++) {
-    list.add(seed);
-  }
-  for (var i = 0; i < row; i++) {
-    matrix.add(List.from(list));
-  }
+  // List<double> list = [];
+  // for (var i = 0; i < column; i++) {
+  //   list.add(seed);
+  // }
+  // for (var i = 0; i < row; i++) {
+  //   matrix.add(List.from(list));
+  // }
+  matrix = List.generate(
+      row, (indexRow) => List.generate(column, (indexColumn) => seed));
   return matrix;
 }
 
-// 生成随机数List<List<double>>
+/// 生成随机数List<List<double>>
+/// Create a matrix instance with random elements
 List<List<double>> generateRandomLists(int row, int column) {
   List<List<double>> matrix = [];
   matrix = [];
-  List<double> list = [];
   var random = Random();
-  for (var i = 0; i < row; i++) {
-    for (var i = 0; i < column; i++) {
-      list.add(random.nextDouble());
-    }
-    matrix.add(list);
-    list = [];
-  }
+
+  // List<double> list = [];
+  // for (var i = 0; i < row; i++) {
+  //   for (var i = 0; i < column; i++) {
+  //     list.add(random.nextDouble());
+  //   }
+  //   matrix.add(list);
+  //   list = [];
+  // }
+  matrix = List.generate(
+      row,
+      (indexRow) =>
+          List.generate(column, (indexColumn) => random.nextDouble()));
   return matrix;
 }
 
-// 通过数组生成对角阵
+/// 通过数组生成对角阵
+/// Create a diagonal matrix from an array
+///
+/// Similar to `diag` function in MATLAB
 List<List<double>> generateDiagonalLists(List<double> diagonal) {
   List<List<double>> matrix = [];
-  List<double> list = [];
-  for (var i = 0; i < diagonal.length; i++) {
-    for (var j = 0; j < diagonal.length; j++) {
-      if (i == j) {
-        list.add(diagonal[i]);
-      } else {
-        list.add(0);
-      }
-    }
-    matrix.add(list);
-    list = [];
-  }
+  // List<double> list = [];
+  // for (var i = 0; i < diagonal.length; i++) {
+  //   for (var j = 0; j < diagonal.length; j++) {
+  //     if (i == j) {
+  //       list.add(diagonal[i]);
+  //     } else {
+  //       list.add(0);
+  //     }
+  //   }
+  //   matrix.add(list);
+  //   list = [];
+  // }
+  int length = diagonal.length;
+  matrix = List.generate(
+      length,
+      (indexRow) => List.generate(length,
+          (indexColumn) => indexRow == indexColumn ? diagonal[indexRow] : 0.0));
   return matrix;
 }
 
-// 将List<List<double>>的行列对换
+/// 将List<List<double>>的行列对换
+///
+/// Conpute the transpose of a matrix
 List<List<double>> listsTranspose(List<List<double>> lists) {
   List<List<double>> temp = [];
-  List<double> list = [];
-  for (var i = 0; i < lists[0].length; i++) {
-    for (var j = 0; j < lists.length; j++) {
-      list.add(lists[j][i]);
-    }
-    temp.add(list);
-    list = [];
-  }
+  // List<double> list = [];
+  // for (var i = 0; i < lists[0].length; i++) {
+  //   for (var j = 0; j < lists.length; j++) {
+  //     list.add(lists[j][i]);
+  //   }
+  //   temp.add(list);
+  //   list = [];
+  // }
+  int rows = lists.length;
+  int columns = lists[0].length;
+  temp = List.generate(
+      columns,
+      (indexRow) =>
+          List.generate(rows, (indexColumn) => lists[indexColumn][indexRow]));
   return temp;
 }
 
-// 求两个List向量的向量积
-double crossProduct(List<double> first, List<double> second) {
+/// 求两个List向量的点积
+///
+/// Return the dot product of two vectors which have the same length
+double dotProduct(List<double> firstVector, List<double> secondVector) {
   double result = 0;
-  for (var i = 0; i < first.length; i++) {
-    result += (first[i] * second[i]);
+  for (var i = 0; i < firstVector.length; i++) {
+    result += (firstVector[i] * secondVector[i]);
   }
   return result;
 }
 
-// 复制一个矩阵
+/// 复制一个矩阵
+///
+/// Copy from the matrix `copied` (deep copy)
 List<List<double>> copyMatrix(Matrix copied) {
   List<List<double>> block = [];
-  List<double> temp = [];
-  for (var i = 0; i < copied.matrix.length; i++) {
-    for (var j = 0; j < copied.matrix[0].length; j++) {
-      temp.add(copied.matrix[i][j]);
-    }
-    block.add(temp);
-    temp = [];
-  }
+  // List<double> temp = [];
+  // for (var i = 0; i < copied.matrix.length; i++) {
+  //   for (var j = 0; j < copied.matrix[0].length; j++) {
+  //     temp.add(copied.matrix[i][j]);
+  //   }
+  //   block.add(temp);
+  //   temp = [];
+  // }
+  block = List.generate(
+      copied.matrix.length,
+      (indexRow) => List.generate(copied.matrix[0].length,
+          (indexColumn) => copied.matrix[indexRow][indexColumn]));
   return block;
 }
 
-// // 获取矩阵的逆 dep_version
-// List<List<double>> utilsInverse(List<List<double>> A) {
-//         List<List<double>> B = Matrix.zero(A.length, A[0].length).matrix;
-//         for (int i = 0; i < A.length; i++) {
-//             for (int j = 0; j < A[0].length; j++) {
-//                 B[i][j] = A[i][j];
-//             }
-//         }
-//         List<List<double>> C = Matrix.zero(A.length, A[0].length).matrix;
-//         for (int i = 0; i < A.length; i++) {
-//             for (int j = 0; j < A[0].length; j++) {
-//                 C[i][j] = pow(-1, i + j) * utils_determinant(minor(B, j, i));
-//             }
-//         }
-//         List<List<double>> D = Matrix.zero(A.length, A[0].length).matrix;
-//         for (int i = 0; i < A.length; i++) {
-//             for (int j = 0; j < A[0].length; j++) {
-//                 D[i][j] = C[i][j] / utils_determinant(A);
-//             }
-//         }
-//         return D;
-//     }
+void main(List<String> args) {
+  var test = generateRandomLists(4, 4);
+  print(utilsInverse(test));
+}
 
-// 获取矩阵的逆
+/// 获取矩阵的逆
+///
+/// Return the inverse of a squarematrix through LU decomposition
 List<List<double>> utilsInverse(List<List<double>> matrix) {
-  List<List<double>> L = Matrix.zero(matrix.length, matrix[0].length).matrix;
-  List<List<double>> r = Matrix.zero(matrix.length, matrix[0].length).matrix;
+  List<List<double>> L = Matrix.zero(matrix.length, matrix.length).matrix;
+  List<List<double>> r = Matrix.zero(matrix.length, matrix.length).matrix;
+
   for (int i = 0; i < L.length; i++) {
     L[i][i] = 1;
-    for (int j = i + 1; j < L[0].length; j++) {
-      L[i][j] = 0;
-    }
   }
-  List<List<double>> U = Matrix.zero(matrix.length, matrix[0].length).matrix;
-  List<List<double>> u = Matrix.zero(matrix.length, matrix[0].length).matrix;
-  for (int i = 0; i < U.length; i++) {
-    for (int j = 0; j < i; j++) {
-      U[i][j] = 0;
-    }
-  }
+
+  List<List<double>> U = Matrix.zero(matrix.length, matrix.length).matrix;
+  List<List<double>> u = Matrix.zero(matrix.length, matrix.length).matrix;
 
   for (int i = 0; i < matrix.length; i++) {
     L[i][0] = matrix[i][0] / matrix[0][0];
-  }
-
-  for (int i = 0; i < matrix[0].length; i++) {
     U[0][i] = matrix[0][i];
   }
 
@@ -138,19 +146,19 @@ List<List<double>> utilsInverse(List<List<double>> matrix) {
   while (pos < matrix.length) {
     // 更新U
     for (int col = pos; col < matrix[0].length; col++) {
-      double sum_current = 0;
+      double sumCurrent = 0;
       for (int k = 0; k < pos; k++) {
-        sum_current += L[pos][k] * U[k][col];
+        sumCurrent += L[pos][k] * U[k][col];
       }
-      U[pos][col] = matrix[pos][col] - sum_current;
+      U[pos][col] = matrix[pos][col] - sumCurrent;
     }
     // 更新L
     for (int row = pos + 1; row < matrix.length; row++) {
-      double sum_current = 0;
+      double sumCurrent = 0;
       for (int k = 0; k < pos; k++) {
-        sum_current += L[row][k] * U[k][pos];
+        sumCurrent += L[row][k] * U[k][pos];
       }
-      L[row][pos] = (matrix[row][pos] - sum_current) / U[pos][pos];
+      L[row][pos] = (matrix[row][pos] - sumCurrent) / U[pos][pos];
     }
     pos++;
   }
@@ -200,20 +208,24 @@ List<List<double>> utilsInverse(List<List<double>> matrix) {
   return inv;
 }
 
-// 求解矩阵的行列式
+/// 求解矩阵的行列式
+///
+/// Return the determinant of a squarematrix
 double utilsDeterminant(List<List<double>> a) {
   if (a.length == 1) {
     return a[0][0];
   }
   double det = 0;
   for (int i = 0; i < a[0].length; i++) {
-    det += pow(-1, i) * a[0][i] * utilsDeterminant(minor(a, 0, i));
+    det += pow(-1, i) * a[0][i] * utilsDeterminant(adjoint(a, 0, i));
   }
   return det;
 }
 
-// 求解二维矩阵在某一位置的伴随矩阵
-List<List<double>> minor(List<List<double>> b, int i, int j) {
+/// 求解二维矩阵在某一位置的伴随矩阵
+///
+/// Return the adjoint matrix
+List<List<double>> adjoint(List<List<double>> b, int i, int j) {
   List<List<double>> a = Matrix.zero(b.length - 1, b[0].length - 1).matrix;
   for (int x = 0, y = 0; x < b.length; x++) {
     if (x == i) {

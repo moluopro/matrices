@@ -1,5 +1,5 @@
 name: matrices
-description: Dart Matrix Computing Library
+description: A Dart matrix computing library, providing basic operations of linear algebra
 version: 1.0.7
 homepage: http://moluopro.com/
 
