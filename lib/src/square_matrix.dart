@@ -57,7 +57,7 @@ class SquareMatrix extends Matrix {
 
   /// 获取方阵的行列式的值
   double determinant() {
-    return utilsDeterminant(this.matrix);
+    return getDeterminant(this.matrix);
   }
 
   /// 获取方阵的逆矩阵
