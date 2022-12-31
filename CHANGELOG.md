@@ -1,3 +1,8 @@
+## 1.0.11
+
+- bugs fix
+- improve speed of determinant greatly 
+
 ## 1.0.9
 
 - bugs fix
