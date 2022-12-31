@@ -158,11 +158,11 @@ List<List<double>> reg(List<List<double>> matrix) {
           ///
           /// matrix的第i行元素
           ///
-          List<double> vect = [];
+          List<double> vector = [];
           for (int k = 0; k < matrix[i].length; k++) {
-            vect.add(matrix[j][k] + matrix[i][k]);
+            vector.add(matrix[j][k] + matrix[i][k]);
           }
-          matrix[i] = vect;
+          matrix[i] = vector;
           // print(vect);
 
           ///
@@ -301,18 +301,22 @@ double utilsDeterminant(List<List<double>> a) {
 ///
 /// Return the determinant of a squarematrix(recommend)
 double getDeterminant(List<List<double>> matrix) {
-  matrix = reg(matrix);
-  print(matrix);
+  // matrix = reg(matrix);
+  // print(matrix);
+
+  for (int i = 0; i < matrix.length; i++) {
+    if (matrix[i][i] == 0) {
+      return utilsDeterminant(matrix);
+    }
+  }
 
   List<List<double>> L = Matrix.zero(matrix.length, matrix.length).matrix;
-  List<List<double>> r = Matrix.zero(matrix.length, matrix.length).matrix;
 
   for (int i = 0; i < L.length; i++) {
     L[i][i] = 1;
   }
 
   List<List<double>> U = Matrix.zero(matrix.length, matrix.length).matrix;
-  List<List<double>> u = Matrix.zero(matrix.length, matrix.length).matrix;
 
   for (int i = 0; i < matrix.length; i++) {
     L[i][0] = matrix[i][0] / matrix[0][0];
@@ -339,14 +343,15 @@ double getDeterminant(List<List<double>> matrix) {
     }
     pos++;
   }
-  print(L);
-  print(U);
   double result = 1;
   for (int i = 0; i < matrix.length; i++) {
     result *= L[i][i];
     result *= U[i][i];
   }
 
+  if (result.isNaN) {
+      return utilsDeterminant(matrix);
+    }
   return result;
 }
 

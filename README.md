@@ -59,12 +59,7 @@ Matrices - Dart Matrix Computing Library
     - [Eigenvectors \*](#eigenvectors-)
   - [Caution!](#caution-1)
   - [Follow-up plan](#follow-up-plan-1)
-- [Emoji method](#emoji-method)
-  - [Create vectors ! \*](#create-vectors--)
-    - [o\_n](#o_n)
-    - [l\_n](#l_n)
-    - [m\_n](#m_n)
-    - [l\_m\_n](#l_m_n)
+
 
 ****
 
@@ -237,7 +232,9 @@ Matrix mat 3x4
 ```
 #### Update row
 ```dart
-  mat.matrix[0] = [1, 4, 5, 0];
+  /// setRow(List<double> list, int row)
+
+  mat.setRow([1, 4, 5, 0], 0);
   print( mat.matrix[0] );
 
   // [1.0, 4.0, 5.0, 0.0]
@@ -576,29 +573,3 @@ Importing 'SquareMatrix.dart' is required before using methods listed below.
 ### Caution!
 
 ### Follow-up plan
-
-****
-
-## Emoji method
-&nbsp;&nbsp;&nbsp;&nbsp;
-
-Providing frequently-used functions, like creating vectors, batch updating elements, etc.
-Importing 'Emoji.dart' is required before using methods listed below.
-
-### Create vectors ! * 
-#### o_n
-```dart
-  /// List<double> o_n(int n)
-```
-#### l_n
-```dart
-  /// List<double> o_n(int n)
-```
-#### m_n
-```dart
-  /// List<double> o_n(int m, int n)
-```
-#### l_m_n
-```dart
-  /// List<double> o_n(int l, int m, int n)
-```

@@ -1,3 +1,9 @@
+## 1.1.0
+
+- bugs fix
+- remove emoji methods
+- methods standardization
+
 ## 1.0.11
 
 - bugs fix

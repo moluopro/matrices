@@ -1,5 +1,5 @@
-import './matrix.dart';
-import './dev_utils.dart';
+// import './matrix.dart';
+// import './dev_utils.dart';
 import './square_matrix.dart';
 
 void main(List<String> args) {
@@ -8,4 +8,11 @@ void main(List<String> args) {
   print(mat.determinant());
   var end = DateTime.now();
   print(end.difference(start));
+
+  var matt = SquareMatrix.fromList([
+    [1, 2, 3],
+    [1, 2, 8],
+    [7, 0, -2]
+  ]);
+  print(matt.determinant());
 }

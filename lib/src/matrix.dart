@@ -158,6 +158,15 @@ class Matrix {
     return r;
   }
 
+  /// 修改矩阵的某一行
+  setRow(List<double> list, int row) {
+    if (matrix[row].length == list.length) {
+      matrix[row] = list;
+    } else {
+      print('Failed: Length of list is not match. ');
+    }
+  }
+
   /// 修改矩阵的某一列
   setColumn(List<double> list, int column) {
     if (matrix.length == list.length) {
