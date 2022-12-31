@@ -1,6 +1,6 @@
 name: matrices
 description: A Dart matrix computing library, providing basic operations of linear algebra
-version: 1.0.9
+version: 1.0.11
 homepage: https://gitee.com/abandoft/matrices
 
 environment:
