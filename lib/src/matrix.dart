@@ -33,7 +33,7 @@ class Matrix {
   String toString() {
     /// 条件表达式判断matrix[0]的长度，若为0，则行数为0
     String matrixToString =
-        'Matrix: ${(matrix[0].length == 0) ? 0 : matrix.length}x${matrix[0].length}\n';
+        'Matrix: ${(matrix[0].isEmpty) ? 0 : matrix.length}x${matrix[0].length}\n';
     for (var list in matrix) {
       matrixToString += '$list\n';
     }
