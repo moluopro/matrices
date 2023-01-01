@@ -1,3 +1,9 @@
+## 1.1.4
+
+- bugs fix
+- add fromFlattenedList
+- add identity matrix
+
 ## 1.1.3
 
 - bugs fix
