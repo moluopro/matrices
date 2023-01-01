@@ -559,7 +559,7 @@ SquareMatrix类包含了一些方阵特有的方法，如快速创建一个方�
 ****
 
 ## 赞助我们 ❤  
-您可以点击&nbsp;[PayPal](https://paypal.me/abandoft)&nbsp;支付或使用App扫码赞助我们：
+您可以点击&nbsp;[PayPal](https://paypal.me/abandoft)&nbsp;支付或使用APP扫码赞助我们：
 ****
 ![](https://gitee.com/abandoft/astableweb/raw/master/data/assets/qr_code/Callinone.png)  
 ****
