@@ -576,7 +576,7 @@ The SquareMatrix class has methods special for square matrix, like creating a sq
 ****
 
 ## Donate ❤   
-You can click&nbsp;[PayPal](https://www.paypal.com/paypalme/abandoft)&nbsp;or scan the QRcode to sponsor us :  
+You can click&nbsp;[PayPal](https://paypal.me/abandoft)&nbsp;or scan the QRcode to sponsor us :  
 ****
 ![](https://gitee.com/abandoft/astableweb/raw/master/data/assets/qr_code/Allinone.png)  
 ****
