@@ -14,5 +14,5 @@ void main(List<String> args) {
     [1, 2, 8],
     [7, 0, -2]
   ]);
-  print(matt.determinant());
+  print(matt.inverse());
 }

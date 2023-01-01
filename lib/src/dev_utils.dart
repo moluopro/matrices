@@ -122,20 +122,6 @@ List<List<double>> copyMatrix(Matrix copied) {
   return block;
 }
 
-// 将矩阵的某一行替换为某个向量
-List<List<double>> changeRow(
-    List<List<double>> mat, int row, List<double> vector) {
-  mat[row] = vector;
-  return mat;
-  // return List.generate(
-  //     mat.length,
-  //     (rowIndex) => List.generate(mat[0].length, (columnIndex) {
-  //           return (row == rowIndex)
-  //               ? vector[columnIndex]
-  //               : mat[rowIndex][columnIndex];
-  //         }));
-}
-
 // 将矩阵规范化为可用于LU分解的矩阵
 List<List<double>> reg(List<List<double>> matrix) {
   for (var i = 0; i < matrix[0].length; i++) {
@@ -198,6 +184,29 @@ List<List<double>> reg(List<List<double>> matrix) {
   return matrix;
 }
 
+// 获取矩阵的逆(Deprecated)
+List<List<double>> utilsInverseDep(List<List<double>> A) {
+  List<List<double>> B = Matrix.zero(A.length, A[0].length).matrix;
+  for (int i = 0; i < A.length; i++) {
+    for (int j = 0; j < A[0].length; j++) {
+      B[i][j] = A[i][j];
+    }
+  }
+  List<List<double>> C = Matrix.zero(A.length, A[0].length).matrix;
+  for (int i = 0; i < A.length; i++) {
+    for (int j = 0; j < A[0].length; j++) {
+      C[i][j] = pow(-1, i + j) * utilsDeterminant(adjoint(B, j, i));
+    }
+  }
+  List<List<double>> D = Matrix.zero(A.length, A[0].length).matrix;
+  for (int i = 0; i < A.length; i++) {
+    for (int j = 0; j < A[0].length; j++) {
+      D[i][j] = C[i][j] / utilsDeterminant(A);
+    }
+  }
+  return D;
+}
+
 /// 获取矩阵的逆
 ///
 /// Return the inverse of a squarematrix through LU decomposition
@@ -215,6 +224,11 @@ List<List<double>> utilsInverse(List<List<double>> matrix) {
   for (int i = 0; i < matrix.length; i++) {
     L[i][0] = matrix[i][0] / matrix[0][0];
     U[0][i] = matrix[0][i];
+
+    // 判断是否继续使用LU
+    if (L[i][0].isInfinite || L[i][0].isNaN) {
+      return utilsInverseDep(matrix);
+    }
   }
 
   int pos = 0;
@@ -234,6 +248,11 @@ List<List<double>> utilsInverse(List<List<double>> matrix) {
         sumCurrent += L[row][k] * U[k][pos];
       }
       L[row][pos] = (matrix[row][pos] - sumCurrent) / U[pos][pos];
+
+      // 判断是否继续使用LU
+      if (L[row][pos].isInfinite || L[row][pos].isNaN) {
+        return utilsInverseDep(matrix);
+      }
     }
     pos++;
   }
@@ -243,6 +262,11 @@ List<List<double>> utilsInverse(List<List<double>> matrix) {
     for (int i = j; i < matrix.length; i++) {
       if (i == j) {
         r[i][j] = 1 / L[i][j];
+
+        // 判断是否继续使用LU
+        if (r[i][j].isInfinite || r[i][j].isNaN) {
+          return utilsInverseDep(matrix);
+        }
       } else if (i < j) {
         r[i][j] = 0;
       } else {
@@ -260,6 +284,11 @@ List<List<double>> utilsInverse(List<List<double>> matrix) {
     for (int i = j; i >= 0; i--) {
       if (i == j) {
         u[i][j] = 1 / U[i][j];
+
+        // 判断是否继续使用LU
+        if (u[i][j].isInfinite || u[i][j].isNaN) {
+          return utilsInverseDep(matrix);
+        }
       } else if (i > j) {
         u[i][j] = 0;
       } else {
@@ -268,6 +297,11 @@ List<List<double>> utilsInverse(List<List<double>> matrix) {
           s += U[i][k] * u[k][j];
         }
         u[i][j] = -1 / U[i][i] * s;
+
+        // 判断是否继续使用LU
+        if (u[i][j].isInfinite || u[i][j].isNaN) {
+          return utilsInverseDep(matrix);
+        }
       }
     }
   }
@@ -350,8 +384,8 @@ double getDeterminant(List<List<double>> matrix) {
   }
 
   if (result.isNaN) {
-      return utilsDeterminant(matrix);
-    }
+    return utilsDeterminant(matrix);
+  }
   return result;
 }
 

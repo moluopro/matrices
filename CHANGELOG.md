@@ -1,3 +1,9 @@
+## 1.1.2
+
+- bugs fix
+- improve inverse
+- methods standardization
+
 ## 1.1.0
 
 - bugs fix

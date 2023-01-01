@@ -40,6 +40,11 @@ class Matrix {
     return matrixToString;
   }
 
+  /// 获取矩阵的某一行
+  List<double> row(int row) {
+    return matrix[row];
+  }
+
   /// 获取矩阵的某一列
   List<double> column(int column) {
     List<double> list = [];

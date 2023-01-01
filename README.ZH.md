@@ -1,5 +1,5 @@
-Matrices 矩阵运算库  
-> [English Doc](https://github.com/Abandoft/Matrices/blob/master/README.md)  [English Doc Gitee](https://gitee.com/abandoft/matrices/blob/master/README.md)  
+Matrices - Dart矩阵运算库  
+> [English Doc](https://github.com/Abandoft/Matrices/blob/master/README.md) &nbsp;&nbsp;&nbsp;[English Doc(Gitee)](https://gitee.com/abandoft/matrices/blob/master/README.md)  
 > 灰度功能在目录中使用 ! 进行标记  
 > 未实现功能在目录中使用 * 进行标记  
 > 使用：https://pub.dev/packages/matrices
@@ -37,8 +37,8 @@ Matrices 矩阵运算库
     - [删除某几行元素](#删除某几行元素)
     - [删除某几列元素](#删除某几列元素)
   - [四则运算](#四则运算)
-    - [加法 !](#加法-)
-    - [减法 !](#减法-)
+    - [加法](#加法)
+    - [减法](#减法)
     - [数乘\&乘法](#数乘乘法)
   - [注意！](#注意)
   - [后续规划](#后续规划)
@@ -53,8 +53,8 @@ Matrices 矩阵运算库
     - [主对角线元素的值为某数组的对角阵](#主对角线元素的值为某数组的对角阵)
     - [主对角线元素的值为某数字的对角阵](#主对角线元素的值为某数字的对角阵)
   - [查询](#查询-1)
-    - [获取行列式的值 !](#获取行列式的值-)
-    - [获取逆矩阵 !](#获取逆矩阵-)
+    - [获取行列式的值](#获取行列式的值)
+    - [获取逆矩阵](#获取逆矩阵)
     - [获取特征值 \*](#获取特征值-)
     - [获取特征向量 \*](#获取特征向量-)
   - [注意！](#注意-1)
@@ -65,7 +65,7 @@ Matrices 矩阵运算库
 ## Matrices简介
 
 &nbsp;&nbsp;&nbsp;&nbsp;
-Matrices是一个Dart语言的矩阵库。开发它的目的是为Astable等项目提供矩阵运算支持。Matrices目前还处于非常早期的阶段，特性和API随时都会发生变动。目前所有运算均使用Dart语言实现。
+Matrices是一个Dart语言的矩阵库。开发它的目的是为Astable等项目提供矩阵运算支持。目前所有运算均使用Dart语言实现。
 
 ****
 
@@ -77,7 +77,7 @@ Matrix类里提供了所有类型的矩阵共有的方法，如创建一般矩�
 ### Matrix类说明
 
 &nbsp;&nbsp;&nbsp;&nbsp;
-Matrix类只有一个成员变量，即List<List< double >>类型的matrix变量。该变量是公有的，所以可以通过数组操作直接改变矩阵元素的值。禁止使用Matrix()构造方法创建矩阵，只允许使用文档里提供的命名构造方法。
+Matrix类只有一个成员变量，即 List<List< double >> 类型的matrix变量。该变量是公有的，所以可以通过数组操作直接改变矩阵元素的值。我们不提供向量的概念，请使用 List< double > 类型代替。禁止使用Matrix()构造方法创建矩阵，只允许使用文档里提供的命名构造方法。
 
 ### 创建Matrix对象
 
@@ -160,7 +160,7 @@ Matrix mat 3x4
 ```
 #### 获取某一行元素
 ```dart
-  print( mat.matrix[0] );    
+  print( mat.row(0) );    
 
   // [2.0, 3.0, 3.0, 3.0]
 ```
@@ -367,7 +367,7 @@ Matrix mat 3x4
   // [1.0, 9.0]
 ```
 ### 四则运算
-#### 加法 !
+#### 加法
 ```dart
   var mat = Matrix.fromList([
     [2, 3, 3],
@@ -376,7 +376,7 @@ Matrix mat 3x4
   print( mat + 3 );
   print( mat + mat );
 ```
-#### 减法 !
+#### 减法
 ```dart
   var mat = Matrix.fromList([
     [2, 3, 3],
@@ -517,7 +517,7 @@ SquareMatrix类包含了一些方阵特有的方法，如快速创建一个方�
   // [0.0, 0.0, 2.0]
 ```
 ### 查询
-#### 获取行列式的值 !
+#### 获取行列式的值
 ```dart
   /// double determinant()
 
@@ -529,7 +529,7 @@ SquareMatrix类包含了一些方阵特有的方法，如快速创建一个方�
 
   // -1.0
 ```
-#### 获取逆矩阵 !
+#### 获取逆矩阵
 ```dart
   /// SquareMatrix inverse()
 

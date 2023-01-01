@@ -1,5 +1,5 @@
 Matrices - Dart Matrix Computing Library
-> [中文文档](https://github.com/Abandoft/Matrices/blob/master/README.ZH.md)  [中文Gitee文档](https://gitee.com/abandoft/matrices/blob/master/README.ZH.md)  
+> [中文文档](https://github.com/Abandoft/Matrices/blob/master/README.ZH.md) &nbsp;&nbsp;&nbsp;[中文文档(Gitee)](https://gitee.com/abandoft/matrices/blob/master/README.ZH.md)  
 > Grayscale releases are marked with '!'  
 > Unimplemented functions are marked with '*'  
 > Usage: https://pub.dev/packages/matrices
@@ -53,8 +53,8 @@ Matrices - Dart Matrix Computing Library
     - [Create diagonal square matrix from list](#create-diagonal-square-matrix-from-list)
     - [Create diagonal square matrix from number](#create-diagonal-square-matrix-from-number)
   - [Special properties of square matrix](#special-properties-of-square-matrix)
-    - [Determinant !](#determinant-)
-    - [Inverse !](#inverse-)
+    - [Determinant](#determinant)
+    - [Inverse](#inverse)
     - [Eigenvalues \*](#eigenvalues-)
     - [Eigenvectors \*](#eigenvectors-)
   - [Caution!](#caution-1)
@@ -67,7 +67,7 @@ Matrices - Dart Matrix Computing Library
 
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-Matrices is a matrix library written purely in Dart. It is developed to provide support for projects like Astable which requires mathematical computation. It is now in the very early age, and its API may change frequently.
+Matrices is a matrix library written purely in Dart. It is developed to provide support for projects like Astable which requires mathematical computation. 
 
 ****
 
@@ -82,7 +82,7 @@ Importing 'Matrix.dart' is required before using methods listed below.
 
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-The Matrix class only has one public field - 'Matrix' whose runtimetype is List<List<double>>. Thus, the operation of updating the matrix is the same as the operation on a 'list' instance.
+The Matrix class only has one public field - 'Matrix' whose runtimetype is List<List< double >>. Thus, the operation of updating the matrix is the same as the operation on a 'list' instance. We do not provide the concept of vectors, please use the List< double > type instead. 
 However, you are NOT ALLOWED to initialize a Matrix instance through Matrix() conctructor. Instead, a few named constructors are provided for initialization of a Matrix instance.
 
 ### Create a Matrix instance
@@ -168,7 +168,7 @@ Matrix mat 3x4
 ```
 #### Access row
 ```dart
-  print( mat.matrix[0] );    
+  print( mat.row(0) );    
 
   // [2.0, 3.0, 3.0, 3.0]
 ```
@@ -536,7 +536,7 @@ Importing 'SquareMatrix.dart' is required before using methods listed below.
   // [0.0, 0.0, 2.0]
 ```
 ### Special properties of square matrix
-#### Determinant !
+#### Determinant
 ```dart
   /// double determinant()
 
@@ -548,7 +548,7 @@ Importing 'SquareMatrix.dart' is required before using methods listed below.
 
   // -1.0
 ```
-#### Inverse !
+#### Inverse
 ```dart
   /// SquareMatrix inverse()
 
