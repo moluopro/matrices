@@ -559,6 +559,7 @@ SquareMatrix类包含了一些方阵特有的方法，如快速创建一个方�
 ****
 
 ## 赞助我们 ❤  
-[PayPal](https://www.paypal.com/paypalme/abandoft)&nbsp;&nbsp;&nbsp;
-[微信支付](https://gitee.com/abandoft/astableweb/raw/master/data/assets/qr_code/WechatCode.jpg)&nbsp;&nbsp;&nbsp;
-[支付宝](https://gitee.com/abandoft/astableweb/raw/master/data/assets/qr_code/AlipayCode.jpg)&nbsp;&nbsp;&nbsp;
+您可以点击&nbsp;[PayPal](https://www.paypal.com/paypalme/abandoft)&nbsp;支付或使用App扫码：
+****
+![](https://gitee.com/abandoft/astableweb/raw/master/data/assets/qr_code/Callinone.png)  
+****
