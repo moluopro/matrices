@@ -1,11 +1,14 @@
-Matrices - Dart Matrix Computing Library
+Matrices - Matrix Computing and Linear Algebra Library for Dart
 > [中文文档](https://github.com/Abandoft/Matrices/blob/master/README.ZH.md) &nbsp;&nbsp;&nbsp;[中文文档(Gitee)](https://gitee.com/abandoft/matrices/blob/master/README.ZH.md)  
 > Grayscale releases are marked with '!'  
 > Unimplemented functions are marked with '*'  
 > Usage: https://pub.dev/packages/matrices
 
 ****
-**CONTENT**
+
+<details>
+<summary>CONTENTS</summary>
+
 - [Matrices introduction](#matrices-introduction)
 - [Matrix class](#matrix-class)
   - [Illustrations of Matrix class](#illustrations-of-matrix-class)
@@ -14,6 +17,7 @@ Matrices - Dart Matrix Computing Library
     - [Matrix of zeros](#matrix-of-zeros)
     - [Matrix of ones](#matrix-of-ones)
     - [Matrix of a certain number](#matrix-of-a-certain-number)
+    - [Matrix from a list](#matrix-from-a-list)
     - [Matrix of random numbers](#matrix-of-random-numbers)
   - [Select](#select)
     - [Access item](#access-item)
@@ -46,6 +50,7 @@ Matrices - Dart Matrix Computing Library
   - [Illustrations of SquareMatrix class](#illustrations-of-squarematrix-class)
   - [Createa a SquareMatrix instance](#createa-a-squarematrix-instance)
     - [Create a square matrix](#create-a-square-matrix)
+    - [Create an identity matrix](#create-an-identity-matrix)
     - [SquareMatrix of zeros](#squarematrix-of-zeros)
     - [SquareMatrix of ones](#squarematrix-of-ones)
     - [SquareMatrix of a certain number](#squarematrix-of-a-certain-number)
@@ -61,6 +66,7 @@ Matrices - Dart Matrix Computing Library
   - [Follow-up plan](#follow-up-plan-1)
 - [Donate ❤](#donate-)
 
+</details>
 
 ****
 
@@ -135,6 +141,24 @@ However, you are NOT ALLOWED to initialize a Matrix instance through Matrix() co
   // Matrix: 2x3
   // [9.0, 9.0, 9.0]
   // [9.0, 9.0, 9.0]
+```
+#### Matrix from a list
+```dart
+  // Matrix.fromFlattenedList(List<double> list, int row, int column)
+  // If the number of list elements is insufficient, the matrix is completed with zeros.
+  
+  var mat1 = Matrix.fromFlattenedList([1, 2, 3, 4], 2, 2);
+  var mat2 = Matrix.fromFlattenedList([1, 2, 3, 4], 2, 3);
+  print(mat1);
+  print(mat2);
+
+  // Matrix: 2x2
+  // [1.0, 2.0]
+  // [3.0, 4.0]
+
+  // Matrix: 2x3
+  // [1.0, 2.0, 3.0]
+  // [4.0, 0.0, 0.0]
 ```
 #### Matrix of random numbers
 ```dart
@@ -461,6 +485,18 @@ The SquareMatrix class has methods special for square matrix, like creating a sq
   // [6.0, 9.0, 9.0]
   // [3.0, 6.0, 27.0]
   // [27.0, 24.0, 18.0]
+```
+#### Create an identity matrix
+```dart
+  // SquareMatrix.identity(int row)
+
+  var mat = SquareMatrix.identity(3);
+  print(mat);
+
+  // SquareMatrix: 3x3
+  // [1.0, 0.0, 0.0]
+  // [0.0, 1.0, 0.0]
+  // [0.0, 0.0, 1.0]
 ```
 #### SquareMatrix of zeros
 ```dart

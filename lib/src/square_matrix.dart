@@ -20,6 +20,11 @@ class SquareMatrix extends Matrix {
     }
   }
 
+  /// 命名构造方法，生成单位矩阵
+  SquareMatrix.identity(int row) {
+    matrix = generateDiagonalLists(generateLists(1, 1, row)[0]);
+  }
+
   /// 命名构造方法，生成全0全1和全为某数字的方阵
   SquareMatrix.zero(int row) {
     matrix = generateLists(0, row, row);
