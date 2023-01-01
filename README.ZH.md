@@ -66,14 +66,14 @@ Matrices - Dart矩阵运算库
 ## Matrices简介
 
 &nbsp;&nbsp;&nbsp;&nbsp;
-Matrices是一个Dart语言的矩阵库。开发它的目的是为Astable等项目提供矩阵运算支持。目前所有运算均使用Dart语言实现。
+Matrices是一个Dart语言的矩阵库。开发它的目的是为Astable等项目提供矩阵运算支持。目前所有运算均使用Dart语言实现。使用时需要先导入matrix.dart文件。
 
 ****
 
 ## 矩阵类Matrix
 
 &nbsp;&nbsp;&nbsp;&nbsp;
-Matrix类里提供了所有类型的矩阵共有的方法，如创建一般矩阵、查询矩阵的元素或某行某列并对其进行修改，拼接向量或矩阵到原矩阵。但是，Matrix类未提供方阵特有的方法，比如求矩阵行列式的值、求逆矩阵、求特征值等。使用这些方法需要先导入Matrix.dart文件。
+Matrix类里提供了所有类型的矩阵共有的方法，如创建一般矩阵、查询矩阵的元素或某行某列并对其进行修改，拼接向量或矩阵到原矩阵。但是，Matrix类未提供方阵特有的方法，比如求矩阵行列式的值、求逆矩阵、求特征值等。
 
 ### Matrix类说明
 
@@ -420,7 +420,7 @@ Matrix mat 3x4
 ## 方阵类SquareMatrix
 
 &nbsp;&nbsp;&nbsp;&nbsp;
-SquareMatrix类包含了一些方阵特有的方法，如快速创建一个方阵、求方阵的行列式的值、逆矩阵、特征值、特征向量等。使用这些方法需要先导入SquareMatrix.dart文件。
+SquareMatrix类包含了一些方阵特有的方法，如快速创建一个方阵、求方阵的行列式的值、逆矩阵、特征值、特征向量等。
 
 ### SquareMatrix类说明
 
