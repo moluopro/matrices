@@ -59,6 +59,7 @@ Matrices - Dart Matrix Computing Library
     - [Eigenvectors \*](#eigenvectors-)
   - [Caution!](#caution-1)
   - [Follow-up plan](#follow-up-plan-1)
+- [Donate ❤](#donate-)
 
 
 ****
@@ -573,3 +574,10 @@ Importing 'SquareMatrix.dart' is required before using methods listed below.
 ### Caution!
 
 ### Follow-up plan
+
+****
+
+## Donate ❤  
+[PayPal](https://www.paypal.com/paypalme/abandoft)&nbsp;&nbsp;&nbsp;
+[Wechat](https://gitee.com/abandoft/astableweb/raw/master/data/assets/qr_code/WechatCode.jpg)&nbsp;&nbsp;&nbsp;
+[Alipay](https://gitee.com/abandoft/astableweb/raw/master/data/assets/qr_code/AlipayCode.jpg)&nbsp;&nbsp;&nbsp;

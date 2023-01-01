@@ -59,6 +59,7 @@ Matrices - Dart矩阵运算库
     - [获取特征向量 \*](#获取特征向量-)
   - [注意！](#注意-1)
   - [后续规划](#后续规划-1)
+- [赞助我们 ❤](#赞助我们-)
 
 
 ****
@@ -554,3 +555,10 @@ SquareMatrix类包含了一些方阵特有的方法，如快速创建一个方�
 ### 注意！
 
 ### 后续规划
+
+****
+
+## 赞助我们 ❤  
+[PayPal](https://www.paypal.com/paypalme/abandoft)&nbsp;&nbsp;&nbsp;
+[微信支付](https://gitee.com/abandoft/astableweb/raw/master/data/assets/qr_code/WechatCode.jpg)&nbsp;&nbsp;&nbsp;
+[支付宝](https://gitee.com/abandoft/astableweb/raw/master/data/assets/qr_code/AlipayCode.jpg)&nbsp;&nbsp;&nbsp;
