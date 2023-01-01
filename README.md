@@ -73,7 +73,6 @@ Matrices - Matrix Computing and Linear Algebra Library for Dart
 ## Matrices introduction
 
 &nbsp;&nbsp;&nbsp;&nbsp;
-
 Matrices is a matrix library written purely in Dart. It is developed to provide support for projects like Astable which requires mathematical computation. Importing 'matrix.dart' is required before using it.
 
 ****
@@ -81,13 +80,11 @@ Matrices is a matrix library written purely in Dart. It is developed to provide 
 ## Matrix class
 
 &nbsp;&nbsp;&nbsp;&nbsp;
-
 The matrix class provides all the methods shared by any types of matrix like vector, square matrix or non-square matrix. For example, methods are provided to create a matrix, to query or update element at certain position, to append a row or column to the existing matrix, etc. However, it does not provides methods special for a square matrix.
 
 ### Illustrations of Matrix class
 
 &nbsp;&nbsp;&nbsp;&nbsp;
-
 The Matrix class only has one public field - 'Matrix' whose runtimetype is List<List< double >>. Thus, the operation of updating the matrix is the same as the operation on a 'list' instance. We do not provide the concept of vectors, please use the List< double > type instead. 
 However, you are NOT ALLOWED to initialize a Matrix instance through Matrix() conctructor. Instead, a few named constructors are provided for initialization of a Matrix instance.
 
@@ -174,8 +171,8 @@ However, you are NOT ALLOWED to initialize a Matrix instance through Matrix() co
 
 
 ### Select
-&nbsp;&nbsp;&nbsp;&nbsp;
 
+&nbsp;&nbsp;&nbsp;&nbsp;
 Taking the matrix 'mat' as example.
 
 ```dart
@@ -237,8 +234,8 @@ Matrix mat 3x4
   // 3
 ```
 ### Update
-&nbsp;&nbsp;&nbsp;&nbsp;
 
+&nbsp;&nbsp;&nbsp;&nbsp;
 Taking the matrix 'mat' as example.
 
 ```dart
@@ -276,8 +273,8 @@ Matrix mat 3x4
   // [5.0, 1.0, 2.0, 9.0]
 ```
 ### Insert
-&nbsp;&nbsp;&nbsp;&nbsp;
 
+&nbsp;&nbsp;&nbsp;&nbsp;
 Taking the matrix 'mat' as example.
 
 ```dart
@@ -347,8 +344,8 @@ Matrix mat 3x4
   // [1.0, 1.0, 2.0, 9.0, 8.0, 8.0]
 ```
 ### Delete
-&nbsp;&nbsp;&nbsp;&nbsp;
 
+&nbsp;&nbsp;&nbsp;&nbsp;
 Taking the matrix 'mat' as example.
 
 ```dart
@@ -460,7 +457,6 @@ Matrix mat 3x4
 ## SquareMatrix class
 
 &nbsp;&nbsp;&nbsp;&nbsp;
-
 The SquareMatrix class has methods special for square matrix, like creating a squarematrix instance, calculating the determinant, the inverse, the eigen values and the eigen vectors, etc. 
 
 ### Illustrations of SquareMatrix class
