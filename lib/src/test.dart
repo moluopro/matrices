@@ -9,12 +9,12 @@ void main(List<String> args) {
   // var end = DateTime.now();
   // print(end.difference(start));
 
-  // var matt = SquareMatrix.fromList([
-  //   [1, 2, 3],
-  //   [1, 2, 8],
-  //   [7, 0, -2]
-  // ]);
-  // print(matt.inverse());
+  var matt = SquareMatrix.fromList([
+    [1, 2, 3],
+    [1, 2, 8],
+    [7, 0, -2]
+  ]);
+  print(matt.count);
 
   // Matrix.fromFlattenedList(List<double> list, int row, int column)
 
@@ -33,8 +33,8 @@ void main(List<String> args) {
 
   // SquareMatrix.identity(int row)
 
-  var mat = SquareMatrix.identity(3);
-  print(mat);
+  // var mat = SquareMatrix.identity(3);
+  // print(mat);
 
   // SquareMatrix: 3x3
   // [1.0, 0.0, 0.0]

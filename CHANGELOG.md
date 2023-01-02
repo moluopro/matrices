@@ -1,3 +1,9 @@
+## 1.1.5
+
+- bugs fix
+- add rowCount&columnCount&count
+- add max&min
+
 ## 1.1.4
 
 - bugs fix

@@ -55,6 +55,47 @@ class Matrix {
     return matrixToString;
   }
 
+  /// 获取矩阵的行数
+  int get rowCount {
+    return matrix.length;
+  }
+
+  /// 获取矩阵的列数
+  int get columnCount {
+    return matrix[0].length;
+  }
+
+  /// 获取矩阵的元素总数
+  int get count {
+    return rowCount * columnCount;
+  }
+
+  /// 获取矩阵的最大值
+  double get max {
+    double index = matrix[0][0];
+    for (int i = 0; i < rowCount; i++) {
+      for (int j = 0; j < columnCount; j++) {
+        if (matrix[i][j] > index) {
+          index = matrix[i][j];
+        }
+      }
+    }
+    return index;
+  }
+
+  /// 获取矩阵的最小值
+  double get min {
+    double index = matrix[0][0];
+    for (int i = 0; i < rowCount; i++) {
+      for (int j = 0; j < columnCount; j++) {
+        if (matrix[i][j] < index) {
+          index = matrix[i][j];
+        }
+      }
+    }
+    return index;
+  }
+
   /// 获取矩阵的某一行
   List<double> row(int row) {
     return matrix[row];
