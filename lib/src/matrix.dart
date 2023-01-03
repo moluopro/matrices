@@ -1,6 +1,5 @@
-import 'dev_utils.dart';
-
-import 'square_matrix.dart';
+import './utils/utils.dart';
+import './square_matrix.dart';
 
 /// 矩阵类
 class Matrix {
@@ -111,12 +110,12 @@ class Matrix {
   }
 
   /// 获取转置矩阵
-  Matrix transpose() {
+  Matrix get transpose {
     return Matrix.fromList(listsTranspose(this.matrix));
   }
 
   /// 获取矩阵的行阶梯形
-  Matrix rowEchelonForm() {
+  Matrix get rowEchelonForm {
     int i, j, k;
     double temp;
     List<List<double>> mat = copyMatrix(this);
@@ -165,7 +164,7 @@ class Matrix {
   }
 
   /// 获取矩阵的秩
-  int rank() {
+  int get rank {
     int i, j, k;
     double temp;
     List<List<double>> mat = copyMatrix(this);
@@ -217,6 +216,22 @@ class Matrix {
       }
     }
     return r;
+  }
+
+  /// 获取截取矩阵得到的方阵
+  SquareMatrix get square {
+    int length =
+        matrix.length >= matrix[0].length ? matrix[0].length : matrix.length;
+    List<List<double>> lists = [];
+    List<double> temp = [];
+    for (int i = 0; i < length; i++) {
+      for (int j = 0; j < length; j++) {
+        temp.add(matrix[i][j]);
+      }
+      lists.add(temp);
+      temp = [];
+    }
+    return SquareMatrix.fromList(lists);
   }
 
   /// 修改矩阵的某一行
@@ -373,19 +388,29 @@ class Matrix {
     return result;
   }
 
-  /// 将矩阵截取为方阵
-  SquareMatrix toSquare() {
-    int length =
-        matrix.length >= matrix[0].length ? matrix[0].length : matrix.length;
-    List<List<double>> lists = [];
-    List<double> temp = [];
-    for (int i = 0; i < length; i++) {
-      for (int j = 0; j < length; j++) {
-        temp.add(matrix[i][j]);
+  List<double> operator [](dynamic index) {
+    if (index is int) {
+      if (index >= 0) {
+        return matrix[index];
+      } else if (index < 0) {
+        return column(-index);
       }
-      lists.add(temp);
-      temp = [];
     }
-    return SquareMatrix.fromList(lists);
+    return column(0);
+  }
+
+  void operator []=(dynamic index, List<double> value) {
+    if (index is int) {
+      if (index >= 0) {
+        setRow(value, index);
+      } else if (index < 0) {
+        setColumn(value, -index);
+      }
+    } else if (index == '' || index == ' ') {
+      setColumn(value, 0);
+    } else {
+      throw Exception(
+          'Unable to assign a value to this index. You can use an integer or an empty string. ');
+    }
   }
 }

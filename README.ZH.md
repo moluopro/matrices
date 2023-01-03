@@ -1,8 +1,7 @@
-Matrices - Dart矩阵运算和xian'xing'dai'shu库  
+# Matrices - Dart矩阵运算和线性代数库  
 > [English Doc](https://github.com/Abandoft/Matrices/blob/master/README.md) &nbsp;&nbsp;&nbsp;[English Doc(Gitee)](https://gitee.com/abandoft/matrices/blob/master/README.md)  
-> 灰度功能在目录中使用 ! 进行标记  
-> 未实现功能在目录中使用 * 进行标记  
-> 使用：https://pub.dev/packages/matrices
+> 灰度功能使用 ! 标记，未实现功能使用 * 进行标记  
+> 1.2.0版本发布了重大更新！由于存在少量对兼容性的破坏，此前版本的用户请查阅文档后再进行升级。
 
 ****
 
@@ -28,9 +27,10 @@ Matrices - Dart矩阵运算和xian'xing'dai'shu库
     - [获取矩阵的元素的最小值](#获取矩阵的元素的最小值)
     - [获取某一行元素](#获取某一行元素)
     - [获取某一列元素](#获取某一列元素)
-    - [获取转置矩阵](#获取转置矩阵)
-    - [获取行阶梯形](#获取行阶梯形)
-    - [获取矩阵的秩](#获取矩阵的秩)
+    - [转置矩阵](#转置矩阵)
+    - [行阶梯形](#行阶梯形)
+    - [矩阵的秩](#矩阵的秩)
+    - [截取矩阵为方阵](#截取矩阵为方阵)
   - [修改](#修改)
     - [修改某个元素](#修改某个元素)
     - [修改某一行元素](#修改某一行元素)
@@ -49,8 +49,7 @@ Matrices - Dart矩阵运算和xian'xing'dai'shu库
     - [加法](#加法)
     - [减法](#减法)
     - [数乘\&乘法](#数乘乘法)
-  - [注意！](#注意)
-  - [后续规划](#后续规划)
+  - [注意事项](#注意事项)
 - [方阵类SquareMatrix](#方阵类squarematrix)
   - [SquareMatrix类说明](#squarematrix类说明)
   - [创建SquareMatrix对象](#创建squarematrix对象)
@@ -63,33 +62,28 @@ Matrices - Dart矩阵运算和xian'xing'dai'shu库
     - [主对角线元素的值为某数组的对角阵](#主对角线元素的值为某数组的对角阵)
     - [主对角线元素的值为某数字的对角阵](#主对角线元素的值为某数字的对角阵)
   - [查询](#查询-1)
-    - [获取行列式的值](#获取行列式的值)
-    - [获取逆矩阵](#获取逆矩阵)
-    - [获取特征值 \*](#获取特征值-)
-    - [获取特征向量 \*](#获取特征向量-)
-  - [注意！](#注意-1)
-  - [后续规划](#后续规划-1)
-- [赞助我们 ❤](#赞助我们-)
+    - [行列式的值](#行列式的值)
+    - [逆矩阵](#逆矩阵)
+    - [特征值 \*](#特征值-)
+    - [特征向量 \*](#特征向量-)
+  - [注意事项](#注意事项-1)
 
 </details>
 
 ****
 ## Matrices简介
 
-&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 Matrices是一个Dart语言的矩阵库。开发它的目的是为Astable等项目提供矩阵运算支持。目前所有运算均使用Dart语言实现。使用时需要先导入matrix.dart文件。
 
 ****
 
 ## 矩阵类Matrix
 
-&nbsp;&nbsp;&nbsp;&nbsp;
-Matrix类里提供了所有类型的矩阵共有的方法，如创建一般矩阵、查询矩阵的元素或某行某列并对其进行修改，拼接向量或矩阵到原矩阵。但是，Matrix类未提供方阵特有的方法，比如求矩阵行列式的值、求逆矩阵、求特征值等。
-
 ### Matrix类说明
 
-&nbsp;&nbsp;&nbsp;&nbsp;
-Matrix类只有一个成员变量，即 List<List< double >> 类型的matrix变量。该变量是公有的，所以可以通过数组操作直接改变矩阵元素的值。我们不提供向量的概念，请使用 List< double > 类型代替。禁止使用Matrix()构造方法创建矩阵，只允许使用文档里提供的命名构造方法。
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Matrix类里提供了所有类型的矩阵共有的方法，如创建一般矩阵、查询矩阵的元素或某行某列并对其进行修改，拼接向量或矩阵到原矩阵。但是，Matrix类未提供方阵特有的方法，比如求矩阵行列式的值、求逆矩阵、求特征值等。我们不提供向量的概念，请使用 List< double > 类型代替。禁止使用Matrix()构造方法创建矩阵，只允许使用文档里提供的命名构造方法。
 
 ### 创建Matrix对象
 
@@ -174,7 +168,7 @@ Matrix类只有一个成员变量，即 List<List< double >> 类型的matrix变�
 
 
 ### 查询
-&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 以mat矩阵作为例子进行演示
 ```dart
 Matrix mat 3x4
@@ -232,7 +226,7 @@ Matrix mat 3x4
 
   // [2.0, 9.0, 1.0]  
 ```
-#### 获取转置矩阵
+#### 转置矩阵
 ```dart
   /// Matrix transpose()
 
@@ -244,7 +238,7 @@ Matrix mat 3x4
   // [3.0, 8.0, 2.0]
   // [3.0, 6.0, 9.0]
 ```
-#### 获取行阶梯形
+#### 行阶梯形
 ```dart
   /// Matrix rowEchelonForm()
 
@@ -256,7 +250,7 @@ Matrix mat 3x4
   // [0.0, 0.0, 1.0, 7.5]
 
 ```
-#### 获取矩阵的秩
+#### 矩阵的秩
 ```dart
   /// int rank()
 
@@ -264,8 +258,19 @@ Matrix mat 3x4
 
   // 3
 ```
+#### 截取矩阵为方阵
+```dart
+  /// SquareMatrix toSquare()
+
+  print( mat.square );
+
+  // Matrix: 3x4
+  // [2.0, 3.0, 3.0]
+  // [9.0, 9.0, 8.0]
+  // [1.0, 1.0, 2.0]
+```
 ### 修改
-&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 同样以mat矩阵作为例子进行演示
 ```dart
 Matrix mat 3x4
@@ -302,7 +307,7 @@ Matrix mat 3x4
   // [5.0, 1.0, 2.0, 9.0]
 ```
 ### 增加
-&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 同样以mat矩阵作为例子进行演示
 ```dart
 Matrix mat 3x4
@@ -371,7 +376,7 @@ Matrix mat 3x4
   // [1.0, 1.0, 2.0, 9.0, 8.0, 8.0]
 ```
 ### 删除
-&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 同样以mat矩阵作为例子进行演示
 ```dart
 Matrix mat 3x4
@@ -470,21 +475,18 @@ Matrix mat 3x4
   // [-5.0, 2.5]
   // [-32.0, 4.0]
 ```
-### 注意！
+### 注意事项
 
-### 后续规划
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 ****
 
 ## 方阵类SquareMatrix
 
-&nbsp;&nbsp;&nbsp;&nbsp;
-SquareMatrix类包含了一些方阵特有的方法，如快速创建一个方阵、求方阵的行列式的值、逆矩阵、特征值、特征向量等。
-
 ### SquareMatrix类说明
 
-&nbsp;&nbsp;&nbsp;&nbsp;
-
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+SquareMatrix类的对象可以使用矩阵类的所有属性和方法。同时，SquareMatrix类包含一些方阵特有的属性和方法，如快速创建一个方阵、求方阵的行列式的值、逆矩阵、特征值、特征向量等。
 
 ### 创建SquareMatrix对象
 
@@ -589,7 +591,7 @@ SquareMatrix类包含了一些方阵特有的方法，如快速创建一个方�
   // [0.0, 0.0, 2.0]
 ```
 ### 查询
-#### 获取行列式的值
+#### 行列式的值
 ```dart
   /// double determinant()
 
@@ -601,7 +603,7 @@ SquareMatrix类包含了一些方阵特有的方法，如快速创建一个方�
 
   // -1.0
 ```
-#### 获取逆矩阵
+#### 逆矩阵
 ```dart
   /// SquareMatrix inverse()
 
@@ -615,17 +617,17 @@ SquareMatrix类包含了一些方阵特有的方法，如快速创建一个方�
   // [1.0, -1.0]
   // [1.0, -1.0]
 ```
-#### 获取特征值 *
+#### 特征值 *
 ```dart
   /// double eigenvalue()
 ```
-#### 获取特征向量 *
+#### 特征向量 *
 ```dart
   /// Matrix eigenvector()
 ```
-### 注意！
-
-### 后续规划
+### 注意事项
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+特征值和特征向量当前版本暂未提供。
 
 ****
 

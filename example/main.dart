@@ -14,9 +14,9 @@ void main(List<String> args) {
   queryColumn();
 
   // Transpose, row echelon form & rank
-  transpose();
-  rowEchelonForm();
-  rank();
+  transpose;
+  rowEchelonForm;
+  rank;
 
   // Update element, row(s) or column(s)
   updateElement();
@@ -55,12 +55,6 @@ void main(List<String> args) {
   inv();
   eig();
   eigVector();
-
-  // Emoji method to create a vector
-  o_n();
-  l_n();
-  m_n();
-  l_m_n();
 }
 
 /// Create a matrix instance
@@ -170,7 +164,7 @@ void transpose() {
     [1, 1, 2, 9]
   ]);
 
-  print(mat.transpose());
+  print(mat.transpose);
 
   // Matrix: 4x3
   // [2.0, 9.0, 1.0]
@@ -187,7 +181,7 @@ void rowEchelonForm() {
     [1, 1, 2, 9]
   ]);
 
-  print(mat.rowEchelonForm());
+  print(mat.rowEchelonForm);
 
   // Matrix: 3x4
   // [1.0, 0.0, 0.0, 1.5]
@@ -203,7 +197,7 @@ void rank() {
     [1, 1, 2, 9]
   ]);
 
-  print(mat.rank());
+  print(mat.rank);
 
   // 3
 }
@@ -567,7 +561,7 @@ void det() {
     [1, 1]
   ]);
 
-  print(dett.determinant());
+  print(dett.determinant);
 
   // -1.0
 }
@@ -579,7 +573,7 @@ void inv() {
     [1, 1]
   ]);
 
-  print(dett.inverse());
+  print(dett.inverse);
 
   // SquareMatrix: 2x2
   // [1.0, -1.0]
@@ -593,27 +587,5 @@ void eig() {
 
 /// Eigenvectors
 void eigVector() {
-  print("Unimplemented function.");
-}
-
-/// Create vectors
-///
-/// o_n
-void o_n() {
-  print("Unimplemented function.");
-}
-
-/// l_n
-void l_n() {
-  print("Unimplemented function.");
-}
-
-/// m_n
-void m_n() {
-  print("Unimplemented function.");
-}
-
-/// l_m_n
-void l_m_n() {
   print("Unimplemented function.");
 }

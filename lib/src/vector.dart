@@ -1,6 +1,5 @@
-/// Magic Emoji Methods(Deprecated)
-/// If you want to use them, pls remove the annotation here.
-/// 神奇的表情包方法(已废弃)
+/// 在Matrices中，向量即List<double>类型的数据
+/// vector.dart提供了一些常用的操作向量类型的方法
 
 /// 快速生成0到n的向量
 // List<double> o_n(int n) {
