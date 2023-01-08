@@ -25,17 +25,7 @@ class Matrix {
 
   /// 命名构造方法，通过数组生成一个矩阵
   Matrix.fromFlattenedList(List<double> list, int row, int column) {
-    int index = 0;
-    matrix = generateLists(0, row, column);
-    for (int i = 0; i < row; i++) {
-      for (int j = 0; j < column; j++) {
-        if (index == list.length) {
-          return;
-        }
-        matrix[i][j] = list[index];
-        index++;
-      }
-    }
+    matrix = fromFlattenedList(list, row, column);
   }
 
   /// 命名构造方法，生成全为随机数的矩阵

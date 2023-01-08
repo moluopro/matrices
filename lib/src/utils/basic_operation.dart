@@ -52,3 +52,21 @@ List<List<double>> copyMatrix(Matrix copied) {
           (indexColumn) => copied.matrix[indexRow][indexColumn]));
   return block;
 }
+
+
+// 从一个数组生成矩阵
+List<List<double>> fromFlattenedList(List<double> list, int row, int column) {
+  int index = 0;
+  var matrix = generateLists(0, row, column);
+
+  for (int i = 0; i < row; i++) {
+    for (int j = 0; j < column; j++) {
+      if (index == list.length) {
+        return matrix;
+      }
+      matrix[i][j] = list[index];
+      index++;
+    }
+  }
+  return matrix;
+}

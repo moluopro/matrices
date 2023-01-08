@@ -2,7 +2,7 @@
 > [English Doc](https://github.com/Abandoft/Matrices/blob/master/README.md) &nbsp;&nbsp;&nbsp;[English Doc(Gitee)](https://gitee.com/abandoft/matrices/blob/master/README.md)  
 > 灰度功能使用 ! 标记，未实现功能使用 * 进行标记  
 >> 1.2.0版本发布了重大更新！  
->> 由于存在少量对兼容性的破坏，此前版本的用户请查阅文档后再进行升级。
+>> 由于存在少量对兼容性的破坏，此前版本的用户请查阅文档后再进行升级。  
 
 ****
 
@@ -68,7 +68,11 @@
     - [特征值 \*](#特征值-)
     - [特征向量 \*](#特征向量-)
   - [注意事项](#注意事项-1)
-
+- [向量类型Vector](#向量类型vector)
+  - [向量类型说明](#向量类型说明)
+  - [创建和操作向量](#创建和操作向量)
+  - [快速创建特殊向量](#快速创建特殊向量)
+  - [注意事项](#注意事项-2)
 </details>
 
 ****
@@ -84,7 +88,7 @@ Matrices是一个Dart语言的矩阵库。开发它的目的是为Astable等项�
 ### Matrix类说明
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-Matrix类里提供了所有类型的矩阵共有的方法，如创建一般矩阵、查询矩阵的元素或某行某列并对其进行修改，拼接向量或矩阵到原矩阵。但是，Matrix类未提供方阵特有的方法，比如求矩阵行列式的值、求逆矩阵、求特征值等。我们不提供向量的概念，请使用 List< double > 类型代替。只允许使用文档里提供的命名构造方法，禁止使用Matrix()构造方法创建矩阵。
+Matrix类里提供了所有类型的矩阵共有的方法，如创建一般矩阵、查询矩阵的元素或某行某列并对其进行修改，拼接向量或矩阵到原矩阵等。但是，Matrix类未提供方阵特有的方法，比如求矩阵行列式的值、求逆矩阵、求特征值等。我们不提供向量的概念，请使用 List< double > 类型代替。只允许使用文档里提供的命名构造方法，禁止使用Matrix()构造方法创建矩阵。
 
 ### 创建Matrix对象
 
@@ -629,6 +633,24 @@ SquareMatrix类的对象可以使用矩阵类的所有属性和方法。同时�
 ### 注意事项
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 特征值和特征向量当前版本暂未提供。
+
+****
+
+## 向量类型Vector
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+在Matrices中，向量即List< double >类型的数据。提供了一些常用的操作向量类型的方法
+### 向量类型说明
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+### 创建和操作向量
+
+### 快速创建特殊向量
+
+### 注意事项
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 ****
 
