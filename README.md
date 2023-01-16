@@ -2,7 +2,7 @@
 > [中文文档](https://github.com/Abandoft/Matrices/blob/master/README.ZH.md) &nbsp;&nbsp;&nbsp;[中文文档(Gitee)](https://gitee.com/abandoft/matrices/blob/master/README.ZH.md)  
 > Grayscale releases are marked with '!', unimplemented functions are marked with '*'  
 >> A major update has been released in version 1.2.0!   
->> Due to a small number of compatibility violations, users of previous versions should consult the documentation before upgrading (The English documentation is not yet fully updated).  
+>> Due to a small number of compatibility violations, users of previous versions should consult the documentation before upgrading (English documentation not fully updated).  
 
 ****
 

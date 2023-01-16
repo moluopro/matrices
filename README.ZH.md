@@ -434,9 +434,9 @@ Matrix mat 3x4
   // 先增加一行元素
   // 再删除第0行和第1行
   mat.addRow([6, 6, 6, 6], 1);
-  print(mat);
+  print( mat );
   mat.deleteRows([0, 1]);
-  print(mat);
+  print( mat );
 
   // Matrix: 3x4
   // [1.0, 2.0, 3.0, 4.0]
@@ -575,7 +575,7 @@ SquareMatrix是Matrix类的子类，该类的对象可以使用矩阵类的所�
   // SquareMatrix.identity(int row)
 
   var mat = SquareMatrix.identity(3);
-  print(mat);
+  print( mat );
 
   // SquareMatrix: 3x3
   // [1.0, 0.0, 0.0]
@@ -659,11 +659,11 @@ SquareMatrix是Matrix类的子类，该类的对象可以使用矩阵类的所�
 ```dart
   /// double determinant()
 
-  var dett = SquareMatrix.fromList([
+  var mat = SquareMatrix.fromList([
     [1, 2],
     [1, 1]
   ]);
-  print(dett.determinant());
+  print( mat.determinant() );
 
   // -1.0
 ```
@@ -671,11 +671,11 @@ SquareMatrix是Matrix类的子类，该类的对象可以使用矩阵类的所�
 ```dart
   /// SquareMatrix inverse()
 
-  var dett = SquareMatrix.fromList([
+  var mat = SquareMatrix.fromList([
     [1, 2],
     [1, 1]
   ]);
-  print(dett.inverse());
+  print( mat.inverse() );
 
   // SquareMatrix: 2x2
   // [1.0, -1.0]
@@ -708,34 +708,35 @@ Vector只是List< double >类型的别名。为了防止您创建的List类型�
 ```dart
   /// 创建向量类型的变量
   Vector vec = [1, 2, 3];
-  print(vec);    
+  print( vec );    
 
   // [1.0, 2.0, 3.0]
 
   /// 获取向量的元素
-  print(vec[1]);    // 2.0
+  print( vec[1] );    // 2.0
+
   /// 修改向量元素的值
   vec[1] = 6;
-  print(vec[1]);    // 6.0
+  print( vec[1] );    // 6.0
 
 ```
 ### 快速创建特殊向量
 ```dart
   /// 创建全为某个数的向量
   /// Vector numberVector(int length, double seed)
-  print(numberVector(4, 6));
+  print( numberVector(4, 6) );
 
   // [6.0, 6.0, 6.0, 6.0]
 
   /// 创建全为随机数的向量
   /// Vector randomVector(int length)
-  print(randomVector(2));
+  print( randomVector(2) );
 
   // [0.29616116997641384, 0.1199242872392301]
 
   /// 生成从start到end的步长为step的向量，默认步长为1
   /// Vector rangeVector(num start, num end, {num step = 1})
-  print(rangeVector(2, 6, step: 2));
+  print( rangeVector(2, 6, step: 2) );
   
   // [2.0, 4.0, 6.0]
 ```
