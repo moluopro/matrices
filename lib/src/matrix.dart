@@ -385,8 +385,13 @@ class Matrix {
       } else if (index < 0) {
         return column(-index);
       }
+    } else if (index == '' || index == ' ') {
+      return column(0);
+    } else {
+      throw Exception(
+          'Unable to get a value from this index. You can use an integer or an empty string. ');
     }
-    return column(0);
+    return [];
   }
 
   void operator []=(dynamic index, List<double> value) {

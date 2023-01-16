@@ -2,7 +2,7 @@
 > [中文文档](https://github.com/Abandoft/Matrices/blob/master/README.ZH.md) &nbsp;&nbsp;&nbsp;[中文文档(Gitee)](https://gitee.com/abandoft/matrices/blob/master/README.ZH.md)  
 > Grayscale releases are marked with '!', unimplemented functions are marked with '*'  
 >> A major update has been released in version 1.2.0!   
->> Due to a small number of compatibility violations, users of previous versions should consult the documentation before upgrading (the English documentation is not yet updated).  
+>> Due to a small number of compatibility violations, users of previous versions should consult the documentation before upgrading (The English documentation is not yet fully updated).  
 
 ****
 
@@ -188,7 +188,7 @@ Matrix mat 3x4
 ```
 #### Access item
 ```dart
-  print( mat.matrix[1][2] );
+  print( mat[1][2] );
 
   // 8.0
 ```
@@ -224,8 +224,11 @@ Matrix mat 3x4
 ```
 #### Access row
 ```dart
-  print( mat.row(0) );    
+  print( mat.row(0) );   
+  // or 
+  print( mat[0] );
 
+  // [2.0, 3.0, 3.0, 3.0]
   // [2.0, 3.0, 3.0, 3.0]
 ```
 #### Access column
@@ -240,7 +243,7 @@ Matrix mat 3x4
 ```dart
   /// Matrix transpose()
 
-  print( mat.transpose() );
+  print( mat.transpose );
 
   // Matrix: 4x3
   // [2.0, 9.0, 1.0]
@@ -250,9 +253,9 @@ Matrix mat 3x4
 ```
 #### Row-echelon form
 ```dart
-  /// Matrix rowEchelonForm()
+  /// Matrix rowEchelonForm
 
-  print( mat.rowEchelonForm() );
+  print( mat.rowEchelonForm );
 
   // Matrix: 3x4
   // [1.0, 0.0, 0.0, 1.5]
@@ -262,9 +265,7 @@ Matrix mat 3x4
 ```
 #### Rank
 ```dart
-  /// int rank()
-
-  print( mat.rank() );
+  print( mat.rank );
 
   // 3
 ```
@@ -281,8 +282,8 @@ Matrix mat 3x4
 ```
 #### Update item
 ```dart
-  mat.matrix[0][0] = 3;
-  print( mat.matrix[0] );
+  mat[0][0] = 3;
+  print( mat[0] );
 
   // [3.0, 3.0, 3.0, 3.0]
 ```
@@ -291,7 +292,7 @@ Matrix mat 3x4
   /// setRow(List<double> list, int row)
 
   mat.setRow([1, 4, 5, 0], 0);
-  print( mat.matrix[0] );
+  print( mat[0] );
 
   // [1.0, 4.0, 5.0, 0.0]
 ```
@@ -604,25 +605,25 @@ The SquareMatrix class has methods special for square matrix, like creating a sq
 ### Special properties of square matrix
 #### Determinant
 ```dart
-  /// double determinant()
+  /// double determinant
 
   var dett = SquareMatrix.fromList([
     [1, 2],
     [1, 1]
   ]);
-  print(dett.determinant());
+  print( dett.determinant );
 
   // -1.0
 ```
 #### Inverse
 ```dart
-  /// SquareMatrix inverse()
+  /// SquareMatrix inverse
 
   var dett = SquareMatrix.fromList([
     [1, 2],
     [1, 1]
   ]);
-  print(dett.inverse());
+  print(dett.inverse);
 
   // SquareMatrix: 2x2
   // [1.0, -1.0]
@@ -643,7 +644,6 @@ The SquareMatrix class has methods special for square matrix, like creating a sq
 ****
 
 ## Donate ❤   
-You can click&nbsp;[PayPal](https://paypal.me/abandoft)&nbsp;or scan the QRcode to sponsor us :  
-****
-![](https://s3.bmp.ovh/imgs/2023/01/02/18e9512c95ccef23.png)  
+You can click&nbsp;[PayPal](https://paypal.me/abandoft)&nbsp;to sponsor us
+
 ****
