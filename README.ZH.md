@@ -78,5 +78,5 @@
   // [-11.0, 7.0]
 ```
 
-## 详细  
+## 进阶用法  
 请点击 [Matrices文档](https://abandoft.gitee.io/matrices/) 查看  
