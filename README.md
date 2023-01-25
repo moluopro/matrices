@@ -82,4 +82,4 @@
 
 
 ## User Guide  
-[Matrices Document](https://abandoft.gitee.io/matrices/)
+Please click [Matrices Document](https://abandoft.gitee.io/matrices/) to view

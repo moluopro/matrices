@@ -78,5 +78,5 @@
   // [-11.0, 7.0]
 ```
 
-## 用户文档  
-[Matrices文档](https://abandoft.gitee.io/matrices/)  
+## 详细  
+请点击 [Matrices文档](https://abandoft.gitee.io/matrices/) 查看  
