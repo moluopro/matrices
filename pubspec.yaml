@@ -1,6 +1,6 @@
 name: matrices
 description: A matrix operations and linear algebra library for Dart and Flutter. 
-version: 1.2.2
+version: 1.2.3
 homepage: https://github.com/abandoft/matrices
 
 environment: 

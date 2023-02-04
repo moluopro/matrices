@@ -1,6 +1,6 @@
 part of './utils.dart';
 
-List<List<List<double>>> LuDecomposition(List<List<double>> matrix) {
+List<List<List<double>>> luDecomposition(List<List<double>> matrix) {
   List<List<double>> L = generateLists(0, matrix.length, matrix.length);
 
   for (int i = 0; i < L.length; i++) {
