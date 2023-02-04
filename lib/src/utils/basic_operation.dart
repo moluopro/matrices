@@ -53,7 +53,6 @@ List<List<double>> copyMatrix(Matrix copied) {
   return block;
 }
 
-
 // 从一个数组生成矩阵
 List<List<double>> fromFlattenedList(List<double> list, int row, int column) {
   int index = 0;

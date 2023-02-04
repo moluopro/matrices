@@ -1,3 +1,8 @@
+## 1.2.2
+
+- bugs fix
+- add doc webpage
+
 ## 1.2.1
 
 - bugs fix

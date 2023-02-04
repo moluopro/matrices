@@ -27,7 +27,7 @@ double determinantLu(List<List<double>> matrix) {
   // LU分解获取L矩阵和U矩阵
   // 若返回空数组，则认定为无法进行LU分解
   var luResult = LuDecomposition(matrix);
-  if(luResult.isEmpty){
+  if (luResult.isEmpty) {
     return determinant(matrix);
   }
 
