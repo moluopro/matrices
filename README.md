@@ -255,3 +255,6 @@
 ****
 Find more functions and usage, please click [Matrices Document](https://abandoft.gitee.io/matrices/) to explore the exciting world of matrices
 ****
+
+## Who's using it?
+- [Astable](https://apps.microsoft.com/store/detail/9NQM9B17MGJS) - A beautiful and powerful structural mechanics software

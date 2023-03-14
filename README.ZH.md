@@ -251,3 +251,6 @@
 
 ## 进阶用法  
 点击 [Matrices文档](https://abandoft.gitee.io/matrices/) 探索精彩的矩阵世界
+
+## 谁在使用
+- [Astable](https://apps.microsoft.com/store/detail/9NQM9B17MGJS) - 优雅而强大的结构力学软件

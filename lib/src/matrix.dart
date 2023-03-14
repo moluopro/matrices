@@ -180,10 +180,8 @@ class Matrix {
           mat[k][j] = temp;
         }
       }
-      if (mat[d][i] == 0)
-
       // 当a[i][i]为零是时，行列式为零
-      {
+      if (mat[d][i].abs() <= 0.00000001) {
         continue;
       } else {
         r = r + 1;
