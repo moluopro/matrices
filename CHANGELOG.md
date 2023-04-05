@@ -2,6 +2,10 @@
 
 - bugs fix
 
+## 1.2.4
+
+- bugs fix
+
 ## 1.2.3
 
 - bugs fix
