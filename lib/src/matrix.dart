@@ -109,9 +109,9 @@ class Matrix {
     int i, j, k;
     double temp;
     List<List<double>> mat = copyMatrix(this);
-    
+
     // r表示秩，d表示当前正在哪一行
-    int r = 0, d = 0; 
+    int r = 0, d = 0;
 
     for (i = 0; i < mat[0].length; i++) {
       k = d; // mat[i][i] mat[i+1][i] ... mat[n][i]中绝对值最大的行位置
@@ -161,7 +161,7 @@ class Matrix {
     List<List<double>> mat = copyMatrix(this);
 
     // r表示秩，d表示当前正在哪一行
-    int r = 0, d = 0; 
+    int r = 0, d = 0;
 
     for (i = 0; i < mat[0].length; i++) {
       k = d;
