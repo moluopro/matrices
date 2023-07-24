@@ -1,3 +1,7 @@
+## 1.2.7
+
+- doc update
+
 ## 1.2.6
 
 - bugs fix
